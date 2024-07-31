@@ -12,9 +12,19 @@ const HeroSection = () => {
         objectFit="cover"
         className="z-0"
       />
-      <div className="absolute z-10 flex flex-col items-start text-center text-white px-6 py-20 rounded-lg">
-        <h1 className="text-6xl font-semibold mb-4 font-serif">Makan</h1>
-        <h1 className="text-6xl font-semibold mb-4 font-serif">Dulu</h1>
+      <div className="absolute z-10 flex flex-col items-start text-left text-white px-6 py-20 rounded-lg">
+        <div className="mb-28 bg-black">
+          <h1 className="text-8xl font-semibold">Creating Ripples Across</h1>
+          <h1 className="text-8xl">the Tides</h1>
+        </div>
+        <div className="mb-28 bg-black">
+          <h2 className="text-2xl">
+            Merges technology and marine science to create
+          </h2>
+          <h2 className="text-2xl">
+            innovative solutions for ocean conservation.
+          </h2>
+        </div>
         <Button
           as={Link}
           target="_blank"
