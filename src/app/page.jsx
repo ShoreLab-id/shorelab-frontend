@@ -2,7 +2,8 @@ import HeroSection from "./section/hero";
 
 export default function Home() {
   return (
-    <main className="min-h-screen flex flex-row justify-center items-center">
+    <main className="">
+      <HeroSection></HeroSection>
       <HeroSection></HeroSection>
     </main>
   );

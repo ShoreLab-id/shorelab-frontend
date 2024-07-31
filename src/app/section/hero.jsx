@@ -1,39 +1,40 @@
+import { poppins, oxygen } from "@/templates/font";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <main className="relative w-full min-h-screen flex flex-col justify-center items-center">
-      <Image
-        src="/static/BG.jpg"
-        alt="profile"
-        layout="fill"
-        objectFit="cover"
-        className="z-0"
-      />
-      <div className="absolute z-10 flex flex-col items-start text-left text-white px-6 py-20 rounded-lg">
-        <div className="mb-28 bg-black">
-          <h1 className="text-8xl font-semibold">Creating Ripples Across</h1>
-          <h1 className="text-8xl">the Tides</h1>
+    <main className="w-full flex items-center justify-center ">
+      <div className="w-full h-screen flex items-center justify-center">
+        <div className="h-4/5 max-h-[624px] w-[90%] max-w-[1300px] rounded-xl bg-cover bg-[url('/static/BG.jpg')]">
+          <div className="flex flex-col justify-end h-full w-full rounded-xl bg-[#03202C]/65">
+            <div className="flex flex-col gap-7 max-w-fit px-[110px] py-14">
+              <h1
+                className={
+                  poppins +
+                  "text-[48px] max-w-[630px] font-medium leading-snug text-white"
+                }
+              >
+                Creating Ripples Across the Tides
+              </h1>
+              <h2 className={oxygen + "text-[27px] max-w-[633px] text-white"}>
+                Merges technology and marine science to create innovative
+                solutions for ocean conservation.
+              </h2>
+              <div className="">
+                <Button
+                  className={
+                    poppins +
+                    "focus:border-0 bg-[#ff6f61] font-light text-white text-lg rounded-md px-12 py-8"
+                  }
+                >
+                  Join ShoreLab Academy
+                </Button>
+              </div>
+            </div>
+          </div>
         </div>
-        <div className="mb-28 bg-black">
-          <h2 className="text-2xl">
-            Merges technology and marine science to create
-          </h2>
-          <h2 className="text-2xl">
-            innovative solutions for ocean conservation.
-          </h2>
-        </div>
-        <Button
-          as={Link}
-          target="_blank"
-          href="https://petrusariaa.vercel.app"
-          className="bg-[#ff6f61] text-white"
-          radius="60"
-        >
-          Join ShoreLab Academy
-        </Button>
       </div>
     </main>
   );
