@@ -10,7 +10,7 @@ const AboutBait = () => {
           <div className="flex flex-row justify-start h-full w-full rounded-xl">
             <div className="flex flex-col w-[720px] justify-center">
               <Image
-                src="http://192.168.1.115:8080/api/static/img?fileName=surfer-blue-wave.webp"
+                src="https://shorelab-backend.vercel.app/api/static/img?fileName=surfer-blue-wave.webp"
                 objectFit="cover"
                 alt="Surfer on a Blue Wave"
                 className="rounded-tl-xl rounded-bl-xl"
