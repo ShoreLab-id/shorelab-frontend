@@ -10,9 +10,15 @@ module.exports = {
   ],
   theme: {
     extend: {
-      fontFamily: {
-        poppins: ["Poppins", "sans-serif"],
-      },
+      colors: {
+        "primary-dark": "#005377",
+        "absolute-white": "#FFFFFF",
+        "primary-white": "#F7F7F7",
+        "secondary-white": "#DEFFF5",
+        "teal-seconday": "#00A8A8",
+        "foam-tertiary": "#A3D9B1",
+        "salmon-accent": "#FF6F61",
+      }
     },
   },
   darkMode: "class",
