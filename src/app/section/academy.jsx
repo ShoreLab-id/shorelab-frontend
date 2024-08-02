@@ -1,5 +1,6 @@
+import { ButtonPrimary, ButtonSecondary } from "@/templates/buttons";
 import { poppins } from "@/templates/font";
-import { Image, Button } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 
 const AcademyHook = () => {
   return (
@@ -22,24 +23,8 @@ const AcademyHook = () => {
           <div className="w-60 h-80 bg-gray-300 rounded-lg"></div>
         </div>
         <div className="flex flex-row gap-6">
-          <Button
-            auto
-            className={
-              poppins +
-              "border-2 border-[#00A8A8] text-[#00A8A8] hover:bg-[#00A8A8] hover:text-white active:bg-[#0F7878] active:text-white bg-transparent font-light text-lg rounded-md px-6 py-2"
-            }
-          >
-            Learn More
-          </Button>
-          <Button
-            auto
-            className={
-              poppins +
-              "bg-[#ff6f61] hover:bg-[#ffa49b] active:bg-[#D65448] text-white font-light text-lg rounded-md px-6 py-2"
-            }
-          >
-            Apply Now
-          </Button>
+          <ButtonSecondary>Learn More</ButtonSecondary>
+          <ButtonPrimary>Apply Now</ButtonPrimary>
         </div>
       </div>
     </main>

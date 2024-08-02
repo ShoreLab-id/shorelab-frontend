@@ -1,5 +1,6 @@
+import { ButtonPrimary } from "@/templates/buttons";
 import { poppins, oxygen } from "@/templates/font";
-import { Image, Button } from "@nextui-org/react";
+import { Image } from "@nextui-org/react";
 import Link from "next/link";
 
 const AboutBait = () => {
@@ -40,14 +41,7 @@ const AboutBait = () => {
                 conservationists.
               </p>
               <div className="pt-6">
-                <Button
-                  className={
-                    poppins +
-                    " focus:border-0 bg-[#ff6f61] font-light text-white text-lg rounded-md px-12 py-4 hover:bg-[#ffa49b] active:bg-[#D65448]"
-                  }
-                >
-                  Learn More
-                </Button>
+                <ButtonPrimary>Learn More</ButtonPrimary>
               </div>
             </div>
           </div>

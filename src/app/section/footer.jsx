@@ -1,4 +1,4 @@
-import { Button } from "@nextui-org/react";
+import { ButtonPrimary } from "@/templates/buttons";
 import { poppins, oxygen } from "@/templates/font";
 
 const Footer = () => {
@@ -10,12 +10,7 @@ const Footer = () => {
           <p className="mb-4">Get the latest news from us</p>
           <div className="flex justify-center items-center max-w-md mx-auto">
             <input type="email" className="p-2 w-full rounded-l-lg" />
-            <Button
-              className="bg-salmon-accent hover:bg-[#ffa49b] active:bg-[#D65448] p-2 rounded-r-lg"
-              radius="none"
-            >
-              Subscribe
-            </Button>
+            <ButtonPrimary size={"lg"}></ButtonPrimary>
           </div>
         </div>
 

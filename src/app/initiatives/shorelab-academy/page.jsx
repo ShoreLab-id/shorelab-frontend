@@ -4,8 +4,8 @@ import {
   ThisYearSection,
   JoinUsSection,
   HighlightSection,
-  PartnersSection
-} from "./sections"
+  PartnersSection,
+} from "./sections";
 
 const ShoreLabAcademyPage = () => {
   return (
@@ -17,7 +17,7 @@ const ShoreLabAcademyPage = () => {
       <HighlightSection />
       <PartnersSection />
     </div>
-  )
-}
+  );
+};
 
-export default ShoreLabAcademyPage
+export default ShoreLabAcademyPage;
