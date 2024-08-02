@@ -15,7 +15,7 @@ module.exports = {
         "absolute-white": "#FFFFFF",
         "primary-white": "#F7F7F7",
         "secondary-white": "#DEFFF5",
-        "teal-seconday": "#00A8A8",
+        "teal-secondary": "#00A8A8",
         "foam-tertiary": "#A3D9B1",
         "salmon-accent": "#FF6F61",
       }
