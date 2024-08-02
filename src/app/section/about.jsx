@@ -4,13 +4,13 @@ import Link from "next/link";
 
 const AboutBait = () => {
   return (
-    <main className="w-full flex items-center justify-center">
-      <div className="w-full h-screen flex items-center justify-center">
-        <div className="h-4/5 max-h-[624px] w-[90%] max-w-[1300px] rounded-xl">
+    <main className="w-full py-20 flex items-center justify-center">
+      <div className="w-full h-full flex items-center justify-center">
+        <div className="max-w-[1300px] rounded-xl">
           <div className="flex flex-row justify-start h-full w-full rounded-xl">
-            <div className="flex flex-col w-[720px] justify-end">
+            <div className="flex flex-col w-[720px] justify-center">
               <Image
-                src="static/Surfer.png"
+                src="http://192.168.1.115:8080/api/static/img?fileName=surfer-blue-wave.webp"
                 objectFit="cover"
                 alt="Surfer on a Blue Wave"
                 className="rounded-tl-xl rounded-bl-xl"
@@ -43,7 +43,7 @@ const AboutBait = () => {
                 <Button
                   className={
                     poppins +
-                    " focus:border-0 bg-[#ff6f61] font-light text-white text-lg rounded-md px-12 py-4"
+                    " focus:border-0 bg-[#ff6f61] font-light text-white text-lg rounded-md px-12 py-4 hover:bg-[#ffa49b] active:bg-[#D65448]"
                   }
                 >
                   Learn More

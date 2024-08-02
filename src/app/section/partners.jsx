@@ -4,9 +4,9 @@ import Link from "next/link";
 
 const Partnership = () => {
   return (
-    <main className="w-full flex items-center justify-center ">
+    <main className="w-full py-20 flex items-center justify-center">
       <div className="w-full h-screen flex items-center justify-center">
-        <div className="h-4/5 max-h-[624px] w-[90%] max-w-[1300px] rounded-xl">
+        <div className="w-[90%] max-w-[1300px] rounded-xl">
           <div className="flex flex-col justify-center items-center h-full w-full rounded-xl">
             <div className="flex flex-col gap-7 max-w-fit px-[496px] py-10">
               <h1
