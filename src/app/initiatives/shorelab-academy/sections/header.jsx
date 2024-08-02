@@ -21,9 +21,7 @@ const HeaderSection = () => {
             Leading Marine Conservation Through Tech Innovation
           </p>
         </div>
-      </div>
-      <div className="flex justify-center relative">
-        <div className="bg-white w-[90%] max-w-[1080px] h-32 absolute -top-14 drop-shadow-md shadow-lg rounded-md"></div>
+        <div className="relative w-[90%] max-w-[1080px] h-32 bg-white drop-shadow-md shadow-lg rounded-md -bottom-14"/>
       </div>
     </div>
   );
