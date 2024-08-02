@@ -3,16 +3,19 @@ import { poppins, oxygen } from "@/templates/font";
 
 const Footer = () => {
   return (
-    <footer className="bg-primary-dark min-h-screen flex justify-center items-center text-white py-12">
-      <div className="w-[1440px] mx-auto px-4 bg-red-500/25">
+    <footer className="bg-primary-dark w-full flex justify-center items-center text-white py-20">
+      <div className="w-[1440px] mx-auto px-4 max-h-[624px]">
         <div className="text-center mb-12">
           <h3 className="text-[#00A8A8] font-bold mb-2">Newsletter</h3>
           <p className="mb-4">Get the latest news from us</p>
           <div className="flex justify-center items-center max-w-md mx-auto">
             <input type="email" className="p-2 w-full rounded-l-lg" />
-            <button className="bg-salmon-accent p-2 rounded-r-lg">
+            <Button
+              className="bg-salmon-accent hover:bg-[#ffa49b] active:bg-[#D65448] p-2 rounded-r-lg"
+              radius="none"
+            >
               Subscribe
-            </button>
+            </Button>
           </div>
         </div>
 
