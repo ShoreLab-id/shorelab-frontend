@@ -1,7 +1,6 @@
 import { poppins, oxygen } from "@/templates/font";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
-import Image from "next/image";
 
 const HeroSection = () => {
   return (
