@@ -1,6 +1,6 @@
+import Footer from "@/templates/footer";
 import AboutBait from "./section/about";
 import AcademyHook from "./section/academy";
-import FooterSection from "./section/footer";
 import HeroSection from "./section/hero";
 import UserHook from "./section/hook";
 import Partnership from "./section/partners";
@@ -15,7 +15,7 @@ export default function Home() {
       <AcademyHook></AcademyHook>
       <OtherInitiatives></OtherInitiatives>
       <Partnership></Partnership>
-      <FooterSection></FooterSection>
+      <Footer></Footer>
     </main>
   );
 }
