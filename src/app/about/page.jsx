@@ -1,4 +1,5 @@
 "use client";
+
 import { Image } from "next/image";
 import { useEffect } from "react";
 
@@ -47,12 +48,10 @@ const ScrollEffectPage = () => {
         </div>
       </section>
 
-      {/* Blue Box */}
       <div
         id="blue-box"
         className="absolute top-0 left-0 w-full bg-blue-700 opacity-0 transition-opacity duration-500 z-0"
       >
-        {/* About Us Section */}
         <section
           id="about-section"
           className="relative w-full py-20 text-white"
@@ -84,7 +83,6 @@ const ScrollEffectPage = () => {
           </div>
         </section>
 
-        {/* Projects Section */}
         <section
           id="projects-section"
           className="relative w-full py-20 text-white"
@@ -105,7 +103,6 @@ const ScrollEffectPage = () => {
         </section>
       </div>
 
-      {/* White Background Section */}
       <section className="relative w-full py-20 bg-white text-black">
         <div className="relative z-10 max-w-[1300px] mx-auto px-6">
           <h2 className="text-[24px] font-semibold">Continued Content</h2>
