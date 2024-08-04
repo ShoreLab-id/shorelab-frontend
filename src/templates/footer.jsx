@@ -1,5 +1,5 @@
-import { ButtonPrimary } from "@/templates/buttons";
-import { poppins, oxygen } from "./font";
+import { IoSend } from "react-icons/io5";
+import { oxygen } from "./font";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
 
@@ -38,8 +38,8 @@ const Footer = () => {
                 disableAnimation 
                 disableRipple 
                 radius="none"
-                className="bg-salmon-accent text-absolute-white rounded-r-lg">
-                {">"}
+                className="bg-salmon-accent text-absolute-white rounded-r-lg"
+                ><IoSend size={18}/>
               </Button>
             </form>
           </div>
