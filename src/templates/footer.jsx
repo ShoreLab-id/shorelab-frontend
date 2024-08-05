@@ -50,64 +50,26 @@ const Footer = () => {
               <div>
                 <GroupHeader>EXPLORE</GroupHeader>
                 <ul className="flex flex-col gap-4">
-                  <li>
-                    <LinkItem to="/">Home</LinkItem>
-                  </li>
-                  <li>
-                    <LinkItem to="#">
-                      About Us
-                    </LinkItem>
-                  </li>
-                  <li>
-                    <LinkItem to="#">
-                      Partners
-                    </LinkItem>
-                  </li>
+                  <li><LinkItem to="/">Home</LinkItem></li>
+                  <li><LinkItem to="#">About Us</LinkItem></li>
+                  <li><LinkItem to="#">Partners</LinkItem></li>
                 </ul>
               </div>
               <div>
                 <GroupHeader>COMMUNITY</GroupHeader>
                 <ul className="flex flex-col gap-4">
-                  <li>
-                    <LinkItem to="/initiatives/shorelab-academy">
-                      ShoreLab Academy
-                    </LinkItem>
-                  </li>
-                  <li>
-                    <LinkItem to="#">
-                      Initiatives
-                    </LinkItem>
-                  </li>
-                  <li>
-                    <LinkItem to="#">
-                      ShoreSnap
-                    </LinkItem>
-                  </li>
-                  <li>
-                    <LinkItem to="#">
-                      ShoreLab Insight
-                    </LinkItem>
-                  </li>
+                  <li><LinkItem to="/initiatives/shorelab-academy">ShoreLab Academy</LinkItem></li>
+                  <li><LinkItem to="#">Initiatives</LinkItem></li>
+                  <li><LinkItem to="#">ShoreSnap</LinkItem></li>
+                  <li><LinkItem to="#">ShoreLab Insight</LinkItem></li>
                 </ul>
               </div>
               <div>
                 <GroupHeader>INFORMATION</GroupHeader>
                 <ul className="flex flex-col gap-4">
-                  <li>
-                    <LinkItem to="#">
-                      Contact
-                    </LinkItem>
-                  </li>
-                  <li>
-                    <LinkItem to="#">
-                      Partnership
-                    </LinkItem>
-                  </li>
-                  <li>
-                    <LinkItem to="#">
-                      Career
-                    </LinkItem>
-                  </li>
+                  <li><LinkItem to="#">Contact</LinkItem></li>
+                  <li><LinkItem to="#">Partnership</LinkItem></li>
+                  <li><LinkItem to="#">Career</LinkItem></li>
                 </ul>
               </div>
             </div>
