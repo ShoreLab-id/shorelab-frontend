@@ -18,14 +18,11 @@ const TextInputComponent = ({label, type, name, placeholder, children}) => {
 const TextAreaInputComponent = ({label, name, placeholder}) => {
   return (
     <div className='flex flex-col py-3'>
-      <label className='text-[27px] text-teal-secondary after:content-["*"] after:text-danger-500'>{label}</label>
+      <label className='text-[27px] text-teal-secondary'>{label}</label>
       <textarea
-        required
-
         placeholder={placeholder}
         className={oxygen + "text-[20px] py-3 px-6 rounded-lg border-2 border-teal-secondary transition-colors text-primary-dark min-h-48 max-h-48 focus:border-foam-tertiary focus:outline-none"}
       />
-      {/* <p className={oxygen + 'text-[20px] text-primary-dark'}>{children}</p> */}
     </div>
   )
 }
@@ -82,6 +79,13 @@ const SLAcademyForm = () => {
               type="textarea"
               placeholder="What are your expectations of this program. Tell us what do yo want to achieve through the project"
               />
+              <div className='w-1/5 pt-6'>
+                <button
+                  type='submit'
+                  className={oxygen + "bg-salmon-accent text-absolute-white hover:bg-[#FF8F84] active:bg-[#D65448] transition-colors w-full py-4 px-8 text-lg rounded-lg"}>
+                    Apply
+                </button>
+              </div>
           </form>
         </div>
       </div>
