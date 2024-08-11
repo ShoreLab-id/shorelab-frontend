@@ -1,14 +1,16 @@
 "use client";
 
 import React from "react";
-import Form from "./section/form";
+import Content from "./section/content";
 
-const RegisterPage = () => {
+const TermsPage = () => {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <Form />
+      <div className="max-w-3xl w-full space-y-8">
+        <Content />
+      </div>
     </div>
   );
 };
 
-export default RegisterPage;
+export default TermsPage;

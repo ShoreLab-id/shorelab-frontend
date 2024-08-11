@@ -15,7 +15,6 @@ export default function Home() {
       <AcademyHook></AcademyHook>
       <OtherInitiatives></OtherInitiatives>
       <Partnership></Partnership>
-      <Footer></Footer>
     </main>
   );
 }

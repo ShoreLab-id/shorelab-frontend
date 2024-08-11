@@ -1,4 +1,5 @@
 import { poppins, oxygen } from "@/templates/font";
+import SectionHeading from "@/templates/heading";
 
 const UserHook = () => {
   return (
@@ -23,24 +24,11 @@ const UserHook = () => {
             </h2>
           </div>
           <div className="flex flex-col gap-6 max-w-fit px-[27.5px] py-14">
-            <h1
-              className={
-                poppins +
-                "text-[27px] max-w-[630px] font-semibold leading-snug text-[#00A8A8]"
-              }
-            >
-              Committed to Protecting
-            </h1>
-            <h2
-              className={
-                poppins +
-                "font-semibold text-[48px] max-w-[633px] text-[#005377]"
-              }
-            >
-              Marine life
-            </h2>
-
-            <p className={oxygen}>
+            <SectionHeading
+              sub={"Committed to Protecting"}
+              title={"Marine Life"}
+            ></SectionHeading>
+            <p className={oxygen + "text-[#005377]"}>
               Our mission is to safeguard our oceans through impactful
               conservation efforts.
             </p>
