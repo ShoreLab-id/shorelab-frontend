@@ -12,7 +12,9 @@ const JoinUsSection = () => {
         </div>
         <Timeline />
         <div className="w-full flex items-end justify-end mt-16">
-          <ButtonPrimary size="base">Register Now</ButtonPrimary>
+          <a href="/initiatives/shorelab-academy/form">
+            <ButtonPrimary size="base">Register Now</ButtonPrimary>
+          </a>
         </div>
       </div>
     </div>
