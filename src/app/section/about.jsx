@@ -9,8 +9,8 @@ const AboutBait = () => {
     <main className="w-full py-20 flex items-center justify-center">
       <div className="w-full flex items-center justify-center">
         <div className="max-w-[1300px] rounded-xl">
-          <div className="flex justify-start h-full w-full rounded-xl">
-            <div className="flex flex-col w-[720px] justify-center bg-red-500/25">
+          <div className="flex justify-start h-full w-full rounded-xl gap-[244px] bg-red-500/25">
+            <div className="flex flex-col w-[526px] justify-center bg-red-500/25">
               <Image
                 src="static/Surfer.jpg"
                 objectFit="cover"
@@ -23,7 +23,11 @@ const AboutBait = () => {
                 sub={"About Us"}
                 title={"Innovate and Evolve"}
               ></SectionHeading>
-              <p className={oxygen + "text-[#005377]"}>
+              <p
+                className={
+                  oxygen + "text-[#005377] w-[530px] bg-red-500/25 text-justify"
+                }
+              >
                 ShoreLab is dedicated to preserving marine ecosystems through
                 innovative projects and community involvement. We want to
                 inspire and equip the next generation of marine

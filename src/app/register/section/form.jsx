@@ -3,6 +3,7 @@ import { Input } from "@nextui-org/react";
 import { EyeFilledIcon } from "@/templates/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "@/templates/EyeSlashFilledIcon";
 import { ButtonPrimary } from "@/templates/buttons";
+import SectionHeading from "@/templates/heading";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -43,25 +44,22 @@ const Form = () => {
   };
 
   return (
-    <div className="bg-white py-8 px-6 shadow rounded-lg sm:px-10">
-      <h2 className="mb-6 text-center text-3xl font-extrabold text-gray-900">
-        Create your account
-      </h2>
+    <div className="bg-secondary-white py-8 px-6 shadow rounded-lg sm:px-10">
+      <SectionHeading
+        sub={"JOIN US"}
+        title={"Create Your Account"}
+      ></SectionHeading>
       <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
         <div className="rounded-md shadow-sm -space-y-px">
-          <div className="mb-4">
-            <label
-              htmlFor="name"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Name
-            </label>
+          <div className="space-y-6">
             <Input
               id="name"
               name="name"
+              label="Name"
               type="text"
+              variant="bordered"
               autoComplete="name"
-              placeholder="Name"
+              placeholder="Insert your name here"
               value={formData.name}
               onChange={handleChange}
               fullWidth
@@ -69,18 +67,12 @@ const Form = () => {
               validationState={errors.name ? "invalid" : "valid"}
               errorMessage={errors.name}
             />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="email"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Email address
-            </label>
             <Input
               id="email"
               name="email"
               type="email"
+              label="Email"
+              variant="bordered"
               autoComplete="email"
               placeholder="Email address"
               value={formData.email}
@@ -90,20 +82,14 @@ const Form = () => {
               validationState={errors.email ? "invalid" : "valid"}
               errorMessage={errors.email}
             />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="password"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Password
-            </label>
             <Input
               id="password"
               name="password"
+              variant="bordered"
+              label="Password"
               type={isVisible ? "text" : "password"}
               autoComplete="current-password"
-              placeholder="Password"
+              placeholder="Insert Password"
               value={formData.password}
               onChange={handleChange}
               fullWidth
@@ -124,18 +110,12 @@ const Form = () => {
                 </button>
               }
             />
-          </div>
-          <div className="mb-4">
-            <label
-              htmlFor="confirmPassword"
-              className="block text-sm font-medium text-gray-700"
-            >
-              Confirm Password
-            </label>
             <Input
               id="confirmPassword"
               name="confirmPassword"
               type={isConfirmVisible ? "text" : "password"}
+              variant="bordered"
+              label="Confirm password"
               autoComplete="current-password"
               placeholder="Confirm Password"
               value={formData.confirmPassword}
@@ -174,6 +154,7 @@ const Form = () => {
               I agree to the{" "}
               <a
                 href="/terms"
+                target="_blank"
                 className="font-medium text-blue-600 hover:text-blue-500"
               >
                 Terms and Conditions

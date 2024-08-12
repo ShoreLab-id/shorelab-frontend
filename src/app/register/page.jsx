@@ -5,7 +5,7 @@ import Form from "./section/form";
 
 const RegisterPage = () => {
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-primary-dark flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
       <Form />
     </div>
   );
