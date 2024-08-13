@@ -1,13 +1,25 @@
 "use client";
 
 import React from "react";
-import Form from "./section/form";
+import LoginForm from "./section/form";
 
 const LoginPage = () => {
   return (
-    <div className="h-screen w-full bg-cover bg-[url('/static/home-hero.jpg')]">
-      <div className="flex flex-col justify-center items-center h-full w-full bg-black/65 py-12 px-4 sm:px-6 lg:px-8">
-        <Form />
+    <div className="h-screen w-full flex items-center justify-center bg-black">
+      <div className="flex">
+        {/* Left Section with Image */}
+        <div className="w-full h-full">
+          <img
+            src="/static/Juan.jpg"
+            alt="Juan"
+            className="object-cover bg-red-500/25"
+          />
+        </div>
+
+        {/* Right Section with Form */}
+        <div className="w-1/2 h-full flex items-center justify-center bg-red-500/25">
+          <LoginForm />
+        </div>
       </div>
     </div>
   );
