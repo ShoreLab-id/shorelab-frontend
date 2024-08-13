@@ -9,6 +9,7 @@ import {
 import { oxygen } from "./font";
 import Link from "next/link";
 import { ButtonPrimary } from "./buttons";
+import { usePathname } from "next/navigation";
 
 const deleteClass = (className, attr) => {
   return className.replace(attr, "");
@@ -83,7 +84,16 @@ const LoginButton = ({ children }) => {
   );
 };
 
+const EXCEPT_RENDER = ["/login", "/register"]
+
 const MyNavbar = () => {
+  
+  const path = usePathname()
+
+  if ( EXCEPT_RENDER.includes(path) ) {
+    return null
+  }
+
   return (
     <Navbar
       id="navbar"

@@ -8,7 +8,7 @@ import OtherInitiatives from "./section/projects";
 
 export default function Home() {
   return (
-    <main className="">
+    <main className="relative">
       <HeroSection />
       <UserHook />
       <AboutBait />

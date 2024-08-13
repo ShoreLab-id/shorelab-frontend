@@ -1,22 +1,21 @@
 import { ButtonPrimary, ButtonSecondary } from "@/templates/buttons";
 import { poppins, oxygen } from "@/templates/font";
-import SectionHeading from "@/templates/heading";
 import { Image } from "@nextui-org/react";
 import Link from "next/link";
 
-const Card = ({img, tag, caption, tagColor}) => {
+const Card = ({img, caption, label}) => {
   return (
-    <div className={oxygen + "flex flex-col flex-shrink-0 w-min border border-[#F3F9FC] p-3 pb-6 rounded-3xl"}>
+    <div className={oxygen + "flex flex-col flex-shrink-0 w-min border border-[#f3f9fc] p-3 pb-6 rounded-3xl"}>
       <Image
         src={img}
         alt=""
         isZoomed
         className="aspect-[4/5] min-w-80"
       />
-      <label className={`my-6 text-[15px] bg-${tagColor}/20 text-${tagColor} px-4 py-1 rounded-full w-fit`}>
-        {tag}
-      </label>
-      <p className="text-primary-dark w-[4/5] text-pretty">
+      {
+        label
+      }
+      <p className="w-[4/5] text-pretty">
         {caption}
       </p>
     </div>
@@ -39,22 +38,31 @@ const AcademyHook = () => {
           <Card 
             img="/static/home-shorelab_1.png"
             // source google maps
-            tag="Discover"
-            tagColor="salmon-accent"
+            label={
+              <label className={"my-6 text-[15px] px-4 py-1 rounded-full w-fit bg-salmon-accent/25 text-salmon-accent"}>
+                Discover
+              </label>
+            }
             caption="Explore marine ecosystems, understand environmental challenges, and dive into socio-cultural dynamics."
           />
           <Card 
             img="/static/home-shorelab_2.png"
             // source google maps
-            tag="Engage"
-            tagColor="teal-secondary"
+            label={
+              <label className={"my-6 text-[15px] px-4 py-1 rounded-full w-fit bg-teal-secondary/25 text-teal-secondary"}>
+                Engage
+              </label>
+            }
             caption="Collaborate with industry experts, participate in fieldwork, and contribute to real-world marine conservation projects."
           />
           <Card 
             img="/static/home-shorelab_3.jpg"
             // source https://statik.tempo.co/data/2022/04/04/id_1100522/1100522_720.jpg
-            tag="Innovate"
-            tagColor="[#83B26E]"
+            label={
+              <label className={"my-6 text-[15px] px-4 py-1 rounded-full w-fit bg-[#83B26E]/25 text-[#83B26E]"}>
+                Innovate
+              </label>
+            }
             caption="Develop tech-driven solutions, create sustainable products, and present your Capstone Project to industry leaders."
           />
         </div>

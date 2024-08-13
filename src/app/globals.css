@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+::-webkit-scrollbar {
+  width: 0px;
+  height: 0px;
+}
+
+/* ::-webkit-scrollbar-track {
+  background-color: #e4e4e427;
+  border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #d4aa70;
+  border-radius: 100px;
+} */
+
+.custom__splide__progress__bar {
+  background-color: "#00A8A8";
+}

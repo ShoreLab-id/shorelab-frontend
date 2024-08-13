@@ -70,7 +70,7 @@ const Content = () => {
             and participants are encouraged to voice their concerns and opinions
             regarding intellectual property, but the final decision rests with
             ShoreLabs. Disputes will be handled with a heavy emphasis on
-            protecting ShoreLabs' interests, with flexibility in the choice of
+            protecting ShoreLabs&apos; interests, with flexibility in the choice of
             resolution methods.
           </p>
         </section>
@@ -126,8 +126,8 @@ const Content = () => {
           <p className="text-secondary-white">
             ShoreLabs reserves the right to terminate partnerships or
             participation in its projects if there are severe or repeated
-            breaches of contract, or if a partner's continued involvement is
-            deemed detrimental to ShoreLabs' mission. Termination may also occur
+            breaches of contract, or if a partner&apos;s continued involvement is
+            deemed detrimental to ShoreLabs&apos; mission. Termination may also occur
             if a partner decides to withdraw or if their actions are found to be
             in conflict with the future of ShoreLabs.
           </p>
@@ -139,7 +139,7 @@ const Content = () => {
           </h2>
           <p className="text-secondary-white">
             All participants and partners are required to adhere to strict
-            ethical guidelines that align with ShoreLabs' mission and vision.
+            ethical guidelines that align with ShoreLabs&apos; mission and vision.
             This includes compliance with environmental regulations,
             sustainability practices, and research ethics. Failure to comply
             will result in immediate consequences, including potential legal

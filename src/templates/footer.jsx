@@ -1,7 +1,10 @@
+"use client"
+
 import { IoSend } from "react-icons/io5";
 import { oxygen } from "./font";
 import { Button } from "@nextui-org/react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const GroupHeader = ({children}) => {
   return (
@@ -19,7 +22,15 @@ const LinkItem = ({to, children}) => {
   )
 }
 
+const EXCEPT_RENDER = ["/login", "/register"]
+
 const Footer = () => {
+  const path = usePathname()
+
+  if ( EXCEPT_RENDER.includes(path) ) {
+    return null
+  }
+
   return (
     <footer className="w-full flex flex-col items-center">
       <div className="w-full bg-primary-dark flex justify-center">

@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Partnership = () => {
   return (
-    <main className="w-full py-20 flex items-center justify-center">
+    <main className="relative z-1 w-full py-20 flex items-center justify-center">
       <div className="w-full h-screen flex items-center justify-center">
         <div className="w-[90%] max-w-[1300px] rounded-xl">
           <div className="flex flex-col justify-center items-center h-full w-full rounded-xl">
