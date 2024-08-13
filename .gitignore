@@ -10,7 +10,7 @@
 /coverage
 
 # static
-/public/static
+# /public/st
 
 # next.js
 /.next/
