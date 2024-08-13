@@ -22,20 +22,25 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle login logic here
     console.log("Login submitted:", formData);
   };
 
   return (
-    <div className="w-3/5 bg-secondary-white py-8 px-6 shadow rounded-lg sm:px-10">
+    <div className="w-2/5 bg-secondary-white py-8 px-6 shadow rounded-lg sm:px-10">
       <div className="text-center">
-        <SectionHeading
-          sub={"WELCOME BACK!"}
-          title={"Sign In"}
-        ></SectionHeading>
+        <SectionHeading sub={"WELCOME BACK!"} title={"Sign In"} />
+        <p className="mt-2 text-sm text-gray-600">
+          Don't have an account?{" "}
+          <a
+            href="/register"
+            className="font-medium text-blue-600 hover:text-blue-500"
+          >
+            Sign up
+          </a>
+        </p>
       </div>
       <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
-        <div className="space-y-6">
+        <div className="space-y-4">
           <Input
             id="email"
             name="email"
@@ -102,20 +107,18 @@ const LoginForm = () => {
 
         <div>
           <ButtonPrimary width="full" size="lg" onClick={handleSubmit}>
-            Sign In
+            Login
           </ButtonPrimary>
         </div>
 
-        <div className="text-center mt-4">
-          <a
-            href="/register"
-            className="text-sm font-medium text-gray-900 hover:text-gray-700"
-          >
-            Don't have an account? Sign up
-          </a>
+        <div className="text-center mt-6">
+          <p className="text-sm font-medium text-gray-600">or Login With</p>
+          {/* Here you can add buttons or icons for Google, Facebook, etc. */}
+          <div className="bg-black h-24 mt-2"></div>{" "}
+          {/* Placeholder for other login methods */}
         </div>
 
-        <div className="text-center mt-2">
+        <div className="text-center mt-6">
           <a
             href="/terms"
             target="_blank"

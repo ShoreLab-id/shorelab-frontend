@@ -44,11 +44,13 @@ const Form = () => {
   };
 
   return (
-    <div className="bg-secondary-white py-8 px-6 shadow rounded-lg sm:px-10">
-      <SectionHeading
-        sub={"JOIN US"}
-        title={"Create Your Account"}
-      ></SectionHeading>
+    <div className="w-2/5 bg-secondary-white py-8 px-6 shadow rounded-lg sm:px-10">
+      <div className="text-center">
+        <SectionHeading
+          sub={"WELCOME BACK!"}
+          title={"Sign Up"}
+        ></SectionHeading>
+      </div>
       <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
         <div className="rounded-md shadow-sm -space-y-px">
           <div className="space-y-6">
