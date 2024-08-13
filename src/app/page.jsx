@@ -9,12 +9,12 @@ import OtherInitiatives from "./section/projects";
 export default function Home() {
   return (
     <main className="">
-      <HeroSection></HeroSection>
-      <UserHook></UserHook>
-      <AboutBait></AboutBait>
-      <AcademyHook></AcademyHook>
-      <OtherInitiatives></OtherInitiatives>
-      <Partnership></Partnership>
+      <HeroSection />
+      <UserHook />
+      <AboutBait />
+      <AcademyHook />
+      <OtherInitiatives />
+      <Partnership />
     </main>
   );
 }

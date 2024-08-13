@@ -22,7 +22,7 @@ export const ButtonSecondary = ({onClick, width, size, children}) => {
   return (
     <button
       onClick={onClick}
-      className={oxygen + "bg-transparent text-teal-secondary outline outline-teal-primary hover:bg-teal-secondary hover:text-absolute-white active:bg-[#1F8383] transition-colors "
+      className={oxygen + "bg-transparent text-teal-secondary outline outline-teal-secondary hover:bg-teal-secondary hover:text-absolute-white active:bg-[#1F8383] transition-colors "
         + (
           width === "full" ? "w-full " : "w-fit "
         ) + (

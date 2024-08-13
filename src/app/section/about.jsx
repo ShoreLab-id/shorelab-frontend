@@ -1,33 +1,32 @@
 import { ButtonPrimary } from "@/templates/buttons";
 import { poppins, oxygen } from "@/templates/font";
 import SectionHeading from "@/templates/heading";
-import { Image } from "@nextui-org/react";
+// import { Image } from "@nextui-org/react";
+import Image from "next/image";
 import Link from "next/link";
 
+// https://blog.remoovit.com/2022/11/02/great-weekend-environmental-volunteer-events/
 const AboutBait = () => {
   return (
-    <main className="w-full py-20 flex items-center justify-center">
+    <main className="w-full py-20 flex flex-col items-center justify-center bg-[#F3F9FC]">
       <div className="w-full flex items-center justify-center">
-        <div className="max-w-[1300px] rounded-xl">
-          <div className="flex justify-start h-full w-full rounded-xl">
-            <div className="flex flex-col w-[720px] justify-center bg-red-500/25">
+        <div className="w-[80%] max-w-[1300px]">
+          <div className="flex justify-evenly gap-8 items-center">
+            <div className="relative h-[35rem] w-[28rem] flex-shrink-0">
               <Image
-                src="static/Surfer.jpg"
-                objectFit="cover"
-                alt="Surfer on a Blue Wave"
-                className="rounded-tl-xl rounded-bl-xl"
-              />
+                src="/static/home-about.png"
+                alt=""
+                sizes="30vw"
+                fill
+                className="object-cover rounded-xl" />
             </div>
-            <div className="flex flex-col bg-blue-500/25">
+            <div className="flex flex-col max-w-[40rem]">
               <SectionHeading
                 sub={"About Us"}
                 title={"Innovate and Evolve"}
               ></SectionHeading>
-              <p className={oxygen + "text-[#005377]"}>
-                ShoreLab is dedicated to preserving marine ecosystems through
-                innovative projects and community involvement. We want to
-                inspire and equip the next generation of marine
-                conservationists.
+              <p className={oxygen + "text-[#005377] text-pretty"}>
+                ShoreLab is dedicated to preserving marine ecosystems through innovative projects and community involvement. We want to inspire and equip the next generation of marine conservationists.
               </p>
               <div className="pt-6">
                 <ButtonPrimary>Learn More</ButtonPrimary>
