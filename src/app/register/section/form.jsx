@@ -4,6 +4,7 @@ import { EyeFilledIcon } from "@/templates/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "@/templates/EyeSlashFilledIcon";
 import { ButtonPrimary } from "@/templates/buttons";
 import SectionHeading from "@/templates/heading";
+import { oxygen } from "@/templates/font";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -44,10 +45,12 @@ const Form = () => {
   };
 
   return (
-    <div className="w-2/5 bg-secondary-white py-8 px-6 shadow rounded-lg sm:px-10">
+    <div
+      className={`w-2/5 bg-secondary-white py-8 px-6 shadow rounded-lg sm:px-10 `}
+    >
       <div className="text-center">
         <SectionHeading
-          sub={"WELCOME BACK!"}
+          sub={"WELCOME FUTURE INITIATES!"}
           title={"Sign Up"}
         ></SectionHeading>
       </div>
@@ -169,6 +172,18 @@ const Form = () => {
           <ButtonPrimary width="full" size="lg" onClick={handleSubmit}>
             Register
           </ButtonPrimary>
+        </div>
+
+        <div className={oxygen + "text-center mt-4"}>
+          <p className="text-md text-gray-600">
+            Already have an account?{" "}
+            <a
+              href="/login"
+              className="font-semibold text-primary-dark hover:text-teal-secondary"
+            >
+              Sign in
+            </a>
+          </p>
         </div>
       </form>
     </div>

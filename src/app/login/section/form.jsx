@@ -4,6 +4,9 @@ import { EyeFilledIcon } from "@/templates/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "@/templates/EyeSlashFilledIcon";
 import { ButtonPrimary, ButtonSecondary } from "@/templates/buttons";
 import SectionHeading from "@/templates/heading";
+import { FaGoogle } from "react-icons/fa";
+import { FaFacebook } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -26,16 +29,16 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="flex justify-center items-center w-screen bg-red-500/25">
+    <div className="flex justify-center items-center w-screen">
       <div></div>
-      <div className="w-[36%] bg-red-500/25 py-8 px-6 shadow rounded-lg sm:px-10">
+      <div className="py-8 px-6 shadow rounded-lg sm:px-10 bg-absolute-white">
         <div className="text-center">
           <SectionHeading sub={"WELCOME BACK!"} title={"Sign In"} />
           <p className="mt-2 text-sm text-gray-600">
             Don't have an account?{" "}
             <a
               href="/register"
-              className="font-medium text-blue-600 hover:text-blue-500"
+              className="font-medium text-primary-dark hover:text-teal-secondary"
             >
               Sign up
             </a>
@@ -100,7 +103,7 @@ const LoginForm = () => {
             <div>
               <a
                 href="/forgot-password"
-                className="font-medium text-blue-600 hover:text-blue-500"
+                className="font-medium text-primary-dark hover:text-teal-secondary"
               >
                 Forgot your password?
               </a>
@@ -121,21 +124,21 @@ const LoginForm = () => {
                 size="lg"
                 onClick={() => console.log("Google login")}
               >
-                Google
+                <FaGoogle className="flex text-4xl mr-2" />
               </ButtonSecondary>
               <ButtonSecondary
                 width="full"
                 size="lg"
                 onClick={() => console.log("Facebook login")}
               >
-                Facebook
+                <FaFacebook className="text-4xl mr-2"></FaFacebook>
               </ButtonSecondary>
               <ButtonSecondary
                 width="full"
                 size="lg"
                 onClick={() => console.log("GitHub login")}
               >
-                GitHub
+                <FaGithub className="text-4xl mr-2"></FaGithub>
               </ButtonSecondary>
             </div>
           </div>
