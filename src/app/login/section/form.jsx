@@ -35,7 +35,7 @@ const LoginForm = () => {
         <div className="text-center">
           <SectionHeading sub={"WELCOME BACK!"} title={"Sign In"} />
           <p className="mt-2 text-sm text-gray-600">
-            Don't have an account?{" "}
+            Don&apos;t have an account?{" "}
             <a
               href="/register"
               className="font-medium text-primary-dark hover:text-teal-secondary"
