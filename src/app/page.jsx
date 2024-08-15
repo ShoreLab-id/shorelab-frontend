@@ -1,4 +1,3 @@
-import Footer from "@/templates/footer";
 import AboutBait from "./section/about";
 import AcademyHook from "./section/academy";
 import HeroSection from "./section/hero";

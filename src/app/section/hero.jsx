@@ -1,6 +1,6 @@
 import { ButtonPrimary } from "@/templates/buttons";
 import { poppins, oxygen } from "@/templates/font";
-// import Link from "next/link";
+import Link from "next/link";
 
 
 const HeroSection = () => {
@@ -22,7 +22,9 @@ const HeroSection = () => {
                 solutions for ocean conservation.
               </h2>
               <div>
-                <ButtonPrimary size="lg">Join ShoreLab Academy</ButtonPrimary>
+                <Link href="#shorelab-academy">
+                  <ButtonPrimary size="lg">Join ShoreLab Academy</ButtonPrimary>
+                </Link>
               </div>
             </div>
           </div>

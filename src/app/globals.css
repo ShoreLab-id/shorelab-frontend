@@ -3,21 +3,73 @@
 @tailwind utilities;
 
 
-::-webkit-scrollbar {
-  width: 0px;
-  height: 0px;
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
 }
 
-/* ::-webkit-scrollbar-track {
-  background-color: #e4e4e427;
-  border-radius: 100px;
+.animate-spin-cust {
+  animation: spin 40s linear infinite;
 }
 
-::-webkit-scrollbar-thumb {
-  background-color: #d4aa70;
-  border-radius: 100px;
-} */
+.animate-spin-cust-2 {
+  animation: spin-2 40s linear infinite;
+}
 
-.custom__splide__progress__bar {
-  background-color: "#00A8A8";
+.animate-spin-cust-3 {
+  animation: spin-3 50s linear infinite;
+}
+
+.animate-spin-cust-4 {
+  animation: spin-4 60s linear infinite;
+}
+
+.animate-spin-wrapper {
+  animation: spin 60s ease-in infinite;
+}
+
+@keyframes spin-2 {
+  from {
+    transform: rotate(250deg);
+  }
+
+  to {
+    transform: rotate(610deg);
+  }
+}
+
+@keyframes spin-4 {
+  from {
+    transform: rotate(45deg);
+  }
+
+  to {
+    transform: rotate(405deg);
+  }
+}
+
+@keyframes spin-3 {
+  from {
+    transform: rotate(321deg);
+  }
+
+  to {
+    transform: rotate(681deg);
+  }
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
 }

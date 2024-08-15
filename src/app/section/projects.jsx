@@ -8,13 +8,14 @@ import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
 
 import '@splidejs/react-splide/css';
 
+// https://i.pinimg.com/originals/76/1b/97/761b97f3f16f6b117d10616fa78a2d3d.jpg
 
 const OtherInitiatives = () => {
   return (
-    <main className="relative flex justify-center py-20 z-0">
+    <main className="relative flex justify-center pt-20 z-0">
       <div className="w-[80%] max-w-[1300px] flex flex-row relative">
         <div className="relative flex w-4/5 z-[2]">
-          <div className="px-10 py-16">
+          <div className="px-10 flex flex-col justify-center">
             <SectionHeading title="Leading the Waves of Oceanic Change" sub="OTHER INITIATIVES" />
             <p className={oxygen + "text-[21px] text-primary-dark pb-6"}>
               Explore the diverse initiatives we undertake to protect and
@@ -33,20 +34,42 @@ const OtherInitiatives = () => {
                 gap:"2rem",
                 resetProgress: false,
                 rewindByDrag: true,
-                interval: 2500,
-                pauseOnHover: false
+                interval: 5000,
+                pauseOnHover: false,
+                arrows: false
               }
             }
+            tag="section"
           >
             <SplideTrack >
               <SplideSlide>
                 <div className="relative w-full aspect-[4/3]">
-                  <Image src="/static/home-shorelab_1.png" fill alt="" sizes="100vw" className="rounded-2xl object-cover" />
+                  <Image src="/static/home-initiatives_1.jpg" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
                 </div>
               </SplideSlide>
               <SplideSlide>
                 <div className="relative w-full aspect-[4/3]">
-                  <Image src="/static/home-shorelab_2.png" fill alt="" sizes="100vw" className="rounded-2xl object-cover" />
+                  <Image src="/static/home-initiatives_2.png" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <div className="relative w-full aspect-[4/3]">
+                  <Image src="/static/home-initiatives_3.png" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <div className="relative w-full aspect-[4/3]">
+                  <Image src="/static/home-initiatives_4.png" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <div className="relative w-full aspect-[4/3]">
+                  <Image src="/static/home-initiatives_5.jpg" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
+                </div>
+              </SplideSlide>
+              <SplideSlide>
+                <div className="relative w-full aspect-[4/3]">
+                  <Image src="/static/home-initiatives_6.jpeg" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
                 </div>
               </SplideSlide>
             </SplideTrack>
