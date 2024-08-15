@@ -1,60 +1,39 @@
 "use client";
 
-import { Image } from "next/image";
+import Image  from "next/image";
+import { IoMdArrowDown } from "react-icons/io";
 import { useEffect } from "react";
 
-const ScrollEffectPage = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY;
-      const blueBox = document.getElementById("blue-box");
-
-      if (scrollPosition > 100) {
-        blueBox.style.opacity = "1";
-      } else {
-        blueBox.style.opacity = "0";
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+const AboutPage = () => {
+  window.addEventListener("scroll", (e) => {
+    const aboutSection = document.getElementById("about")
+    const title = document.getElementById("title");
+    const axY = window.scrollY
+    aboutSection.style.transform = 'translateY(' + (-192 + (0.6 * -axY)) + 'px)';
+    title.style.transform = 'translateY(' + (0.75 * axY) + 'px)';
+    title.style.scale = (100 - (0.05 * axY))/100;
+    title.style.opacity = (100 - (0.5 * axY))/100;
+  })
 
   return (
     <div>
-      {/* Hero Section */}
       <section
-        className="relative w-full h-screen bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/static/BG.jpg')",
-        }}
-      >
-        <div className="absolute inset-0 bg-black opacity-50"></div>
-        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white">
-          <h1 className="text-5xl font-bold">ShoreLabs</h1>
-          <p className="text-xl mt-4">Creating Ripples Across the Tides</p>
-        </div>
-        <div className="absolute bottom-10 w-full flex justify-center">
-          <div className="animate-bounce">
-            <Image
-              src="/static/Scroll.png"
-              alt="Scroll Down"
-              className="h-12 w-12"
-            />
+        className="relative w-full h-screen bg-cover bg-center bg-[url('/static/home-hero.jpg')] z-0">
+        <div className="w-full h-full bg-[#03202C]/65 flex justify-center">
+          <div className="w-[80%] max-w-[1300px] flex flex-col justify-center items-center gap-20">
+            <div id="title" className="flex gap-10 items-center justify-center">
+              <div className="size-32 bg-slate-200 animate-pulse rounded-lg" />
+              <h1 className="text-7xl font-bold text-white">ShoreLab</h1>
+            </div>
+            {/* <IoMdArrowDown className="size-16 bg-primary-white/20 text-white p-2 rounded-full animate-bounce" /> */}
           </div>
         </div>
       </section>
 
-      <div
-        id="blue-box"
-        className="absolute top-0 left-0 w-full bg-blue-700 opacity-0 transition-opacity duration-500 z-0"
-      >
-        <section
-          id="about-section"
-          className="relative w-full py-20 text-white"
+      <section className="relative flex justify-center w-full">
+        <div
+          id="about"
+          className="bg-primary-dark w-[80%] max-w-[1300px] py-20 text-white z-[1] rounded-2xl drop-shadow-md shadow-xl -translate-y-48"
         >
           <div className="relative z-10 max-w-[1300px] mx-auto px-6">
             <div className="flex flex-col md:flex-row items-center md:items-start mb-20">
@@ -75,15 +54,15 @@ const ScrollEffectPage = () => {
                   universities, united by a single mission: to conserve the
                   vibrant coral reefs of Indonesia. Our shared passion for
                   marine preservation drives us to collaborate and innovate,
-                  ensuring a sustainable future for our beloved country's
+                  ensuring a sustainable future for our beloved country&apos;s
                   underwater ecosystems.
                 </p>
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section
+        {/* <section
           id="projects-section"
           className="relative w-full py-20 text-white"
         >
@@ -100,8 +79,8 @@ const ScrollEffectPage = () => {
               <div className="w-[200px] h-[300px] bg-gray-300 rounded-lg"></div>
             </div>
           </div>
-        </section>
-      </div>
+        </section> */}
+      </section>
 
       <section className="relative w-full py-20 bg-white text-black">
         <div className="relative z-10 max-w-[1300px] mx-auto px-6">
@@ -113,7 +92,7 @@ const ScrollEffectPage = () => {
         </div>
       </section>
     </div>
-  );
+  )
 };
 
-export default ScrollEffectPage;
+export default AboutPage;
