@@ -84,14 +84,13 @@ const LoginButton = ({ children }) => {
   );
 };
 
-const EXCEPT_RENDER = ["/login", "/register"]
+const EXCEPT_RENDER = ["/login", "/register"];
 
 const MyNavbar = () => {
-  
-  const path = usePathname()
+  const path = usePathname();
 
-  if ( EXCEPT_RENDER.includes(path) ) {
-    return null
+  if (EXCEPT_RENDER.includes(path)) {
+    return null;
   }
 
   return (
@@ -129,7 +128,7 @@ const MyNavbar = () => {
         </NavbarItem>
         <NavbarItem>
           <Link
-            href="#"
+            href="/about"
             className={
               oxygen +
               "__navbar-text__ transition-colors text-primary-dark lg:text-white hover:bg-teal-secondary/20 hover:!text-teal-secondary rounded-md px-3 py-1 text-[21px]"
