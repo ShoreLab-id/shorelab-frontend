@@ -124,21 +124,21 @@ const LoginForm = () => {
                 size="lg"
                 onClick={() => console.log("Google login")}
               >
-                <FaGoogle className="flex text-4xl mr-2" />
+                <FaGoogle className="text-4xl" />
               </ButtonSecondary>
               <ButtonSecondary
                 width="full"
                 size="lg"
                 onClick={() => console.log("Facebook login")}
               >
-                <FaFacebook className="text-4xl mr-2"></FaFacebook>
+                <FaFacebook className="text-4xl"></FaFacebook>
               </ButtonSecondary>
               <ButtonSecondary
                 width="full"
                 size="lg"
                 onClick={() => console.log("GitHub login")}
               >
-                <FaGithub className="text-4xl mr-2"></FaGithub>
+                <FaGithub className="text-4xl"></FaGithub>
               </ButtonSecondary>
             </div>
           </div>
