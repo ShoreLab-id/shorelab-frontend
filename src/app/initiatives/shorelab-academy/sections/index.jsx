@@ -4,6 +4,7 @@ import ThisYearSection from "./thisYear"
 import JoinUsSection from "./joinUs"
 import HighlightSection from "./highlight"
 import PartnersSection from "./partners"
+import ThisYear2Section from "./thisYear2"
 
 module.exports = {
   HeaderSection,
@@ -11,5 +12,6 @@ module.exports = {
   ThisYearSection,
   JoinUsSection,
   HighlightSection,
-  PartnersSection
+  PartnersSection,
+  ThisYear2Section,
 }

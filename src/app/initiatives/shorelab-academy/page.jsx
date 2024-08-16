@@ -5,6 +5,7 @@ import {
   JoinUsSection,
   HighlightSection,
   PartnersSection,
+  ThisYear2Section,
 } from "./sections";
 
 const ShoreLabAcademyPage = () => {
@@ -13,6 +14,7 @@ const ShoreLabAcademyPage = () => {
       <HeaderSection />
       <AboutSection />
       <ThisYearSection />
+      <ThisYear2Section />
       <JoinUsSection />
       <HighlightSection />
       <PartnersSection />
