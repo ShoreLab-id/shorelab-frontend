@@ -17,7 +17,6 @@ const deleteClass = (className, attr) => {
 };
 
 const handleScrollChange = (position) => {
-  console.log(position)
   const _navbar = document.getElementById("navbar");
   const _loginButton = document.getElementById("login-button");
   // const imageWrapper = document.querySelector(".__navbar-logo-image__")
