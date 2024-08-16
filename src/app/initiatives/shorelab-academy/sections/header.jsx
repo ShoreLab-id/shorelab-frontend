@@ -1,13 +1,15 @@
+import { ButtonPrimary } from "@/templates/buttons";
 import { poppins, oxygen } from "@/templates/font";
 
 const HeaderSection = () => {
   return (
       <div className="w-full h-[90vh] max-h-[1080px] bg-[url('/static/shorelab-hero.webp')] bg-cover bg-center">
-        <div className="w-full h-full bg-[#03202C]/65 flex flex-col justify-end items-center">
+        <div className="w-full h-full bg-[#03202C]/85 flex flex-col justify-end items-center">
             <div className="w-[70%] max-w-[1300px] flex items-center">
-              <div>
+              <div className="flex flex-col gap-8">
                 <h1 className={poppins + "text-[84px] font-semibold text-secondary-white leading-tight"}>ShoreLab Academy</h1>
                 <p className={oxygen + "text-[27px] font-semibold text-secondary-white max-w-[530px]"}>Leading Marine Conservation Through Tech Innovation</p>
+                <ButtonPrimary>Upcoming Project</ButtonPrimary>
               </div>
               <div className="p-2 bg-white rounded-2xl flex-shrink-0">
                 <div className="size-[30rem] overflow-hidden rounded-xl">
