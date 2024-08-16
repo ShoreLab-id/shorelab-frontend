@@ -10,18 +10,20 @@ import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 const AboutPage = () => {
-  useEffect(() => {
-    window.addEventListener("scroll", (e) => {
-      let aboutSection = document.getElementById("about");
+  useEffect (() => {
+      window.addEventListener("scroll", (e) => {
+      const aboutSection = document.getElementById("about")
       const title = document.getElementById("title");
-      const axY = window.scrollY;
-      aboutSection.style.transform = "translateY(" + (-80 + 0.6 * -axY) + "px)";
-      title.style.transform = "translateY(" + 0.75 * axY + "px)";
-      title.style.scale = (100 - 0.05 * axY) / 100;
-      title.style.opacity = (100 - 0.5 * axY) / 100;
-      title.style.filter = "blur(" + 0.1 * axY + "px)";
-    });
-  }, []);
+      const axY = window.scrollY
+      if (aboutSection) {
+        aboutSection.style.transform = 'translateY(' + (-80 + (0.6 * -axY)) + 'px)';
+        title.style.transform = 'translateY(' + (0.75 * axY) + 'px)';
+        title.style.scale = (100 - (0.05 * axY))/100;
+        title.style.opacity = (100 - (0.5 * axY))/100;
+        title.style.filter = 'blur('+ 0.1 * axY + 'px)'
+      }
+    })
+  }, [])
 
   return (
     <div>
@@ -325,7 +327,7 @@ const AboutPage = () => {
               />
             </div>
             <div className="w-full text-center font-bold">
-              His name is Juan. He's a Homse.
+              His name is Juan. He&apos;s a Homse.
             </div>
             <div className="w-full text-center text-sm text-gray-500">
               A homse. You know. Neighs..
