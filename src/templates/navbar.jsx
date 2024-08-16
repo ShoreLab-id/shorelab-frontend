@@ -10,12 +10,14 @@ import { oxygen } from "./font";
 import Link from "next/link";
 import { ButtonPrimary } from "./buttons";
 import { usePathname } from "next/navigation";
+import { useEffect } from "react"
 
 const deleteClass = (className, attr) => {
   return className.replace(attr, "");
 };
 
 const handleScrollChange = (position) => {
+  console.log(position)
   const _navbar = document.getElementById("navbar");
   const _loginButton = document.getElementById("login-button");
   // const imageWrapper = document.querySelector(".__navbar-logo-image__")
@@ -87,18 +89,26 @@ const LoginButton = ({ children }) => {
 const EXCEPT_RENDER = ["/login", "/register"];
 
 const MyNavbar = () => {
-  const path = usePathname();
+  
+  useEffect (() => {
+    window.addEventListener("scroll", (ev) => {
+      handleScrollChange(window.scrollY)
+    })
+  }, [])
+
+  const path = usePathname()
 
   if (EXCEPT_RENDER.includes(path)) {
     return null;
   }
 
+
   return (
     <Navbar
       id="navbar"
-      disableScrollHandler={false}
+      // disableScrollHandler={false}
       isBlurred={false}
-      onScrollPositionChange={(yPos) => handleScrollChange(yPos)}
+      // onScrollPositionChange={(yPos) => handleScrollChange(yPos)}
       classNames={{
         base: "fixed py-4 bg-white lg:!bg-transparent border-b border-slate-200/50 transition-all shadow-lg drop-shadow-sm",
         wrapper: "max-w-[1300px]",
