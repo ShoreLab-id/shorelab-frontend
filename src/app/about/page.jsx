@@ -2,19 +2,10 @@
 
 import Image from "next/image";
 import { poppins, oxygen } from "@/templates/font";
-import Aos from "aos";
-
-import "aos/dist/aos.css";
 import { useEffect } from "react";
 
 const AboutPage = () => {
   useEffect(() => {
-    Aos.init({
-      disable: "mobile",
-      duration: 700,
-      easing: "ease-out-cubic",
-    })
-
     window.addEventListener("scroll", (e) => {
     let aboutSection = document.getElementById("about")
     const title = document.getElementById("title");
@@ -41,9 +32,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="relative w-full h-min bg-[#03202C] bg-[url('/assets/topography.svg')]">
-        {/* <p className={ poppins + "font-bold text-9xl rotate-90 bg-red-500/25 leading-none absolute left-0 top-0"}>About Us</p> */}
-        
+      <section className="relative w-full h-min bg-[#03202C] bg-[url('/assets/topography.svg')]">        
         <div className="relative flex justify-center w-full h-fit max-h-[1600px]">
           <div
             data-aos="fade-up"
