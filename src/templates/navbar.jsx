@@ -89,15 +89,17 @@ const MyNavbar = () => {
       }}
     >
       <NavbarBrand>
-        <p
-          className={
-            (scrollPos > 200 ? "lg:text-primary-dark ":"lg:text-white " ) +
-            oxygen +
-            " __navbar-text__ text-[32px] font-bold transition-colors text-primary-dark"
-          }
-        >
-          ShoreLab
-        </p>
+        <Link href="/">
+          <p
+            className={
+              (scrollPos > 200 ? "lg:text-primary-dark ":"lg:text-white " ) +
+              oxygen +
+              " __navbar-text__ text-[32px] font-bold transition-colors text-primary-dark"
+            }
+          >
+            ShoreLab
+          </p>
+        </Link>
       </NavbarBrand>
       <NavbarContent>
         <NavbarItem>
