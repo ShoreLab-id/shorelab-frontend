@@ -1,31 +1,17 @@
-"use client";
-
-import Image from "next/image";
+import { Image } from "@nextui-org/react";
 import { poppins, oxygen } from "@/templates/font";
 import SectionHeading from "@/templates/heading";
-// import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+import dynamic from "next/dynamic";
 
 import "@splidejs/react-splide/css";
-import TitleSection from "./sections/title";
+
 import AboutWrapper from "./AboutWrapper";
 
-const AboutPage = () => {
-  // useEffect(() => {
-  //   window.addEventListener("scroll", (e) => {
-  //     const aboutSection = document.getElementById("about");
-  //     const title = document.getElementById("title");
-  //     const axY = window.scrollY;
-  //     if (aboutSection) {
-  //       aboutSection.style.transform =
-  //         "translateY(" + (-80 + 0.6 * -axY) + "px)";
-  //       title.style.transform = "translateY(" + 0.75 * axY + "px)";
-  //       title.style.scale = (100 - 0.05 * axY) / 100;
-  //       title.style.opacity = (100 - 0.5 * axY) / 100;
-  //       title.style.filter = "blur(" + 0.1 * axY + "px)";
-  //     }
-  //   });
-  // }, []);
+const TitleSection = dynamic(() => import("./sections/title"), {
+  ssr: false,
+})
 
+const AboutPage = () => {
   return (
     <div>
       <section className="relative w-full h-screen bg-cover bg-center bg-[url('/static/home-hero.jpg')] z-0">
@@ -40,19 +26,16 @@ const AboutPage = () => {
         <div className="relative flex justify-center w-full h-fit max-h-[1600px]">
           <AboutWrapper>
             <div className="flex flex-row gap-10">
-              <div
-                data-aos="fade-up-right"
-                className="relative w-3/5 aspect-[5/4] rounded-2xl shadow-xl drop-shadow-md overflow-hidden"
-              >
-                  <Image
-                    onLoad={() => <div className="w-full h-full bg-slate-200 animate-pulse" />}
-                    src="https://shorelab-backend.vercel.app/api/static/img?fileName=1X-88Igro2IThxnMUoJEh50SFlRtnLBCH"
-                    alt=""
-                    loading="lazy"
-                    fill
-                    sizes="50vw"
-                    className="object-cover"
-                  />
+              <div data-aos="fade-up-right" className="relative w-3/5 aspect-[5/4] rounded-lg overflow-hidden">
+                <Image
+                  src="https://shorelab-backend.vercel.app/api/static/img?fileName=14RMPqLrBsZR6PxkSMJbVR_qyXxYZWW3G"
+                  alt=""
+                  loading="lazy"
+                  classNames={{
+                    wrapper: "h-full max-h-fit object-cover overflow-hidden rounded-none bg-red-500/25",
+                    img: "min-w-full min-h-full rounded-none"
+                  }}
+                />
               </div>
               <div className="w-2/5">
                 <div about="section-heading" className="mb-12">
@@ -73,7 +56,7 @@ const AboutPage = () => {
                     A Passion for the Ocean
                   </h1>
                 </div>
-                <p className="text-pretty">
+                <p className={oxygen+"text-pretty text-lg"}>
                   Our journey started with a love for the ocean, where we found
                   peace and inspiration. But as we explored further, we began to
                   see the signs of a struggling marine ecosystem—bleached
@@ -82,20 +65,18 @@ const AboutPage = () => {
               </div>
             </div>
 
-            {/* <div className="flex flex-row-reverse gap-10">
-              <div
-                data-aos="fade-up-left"
-                data-aos-offset="-200"
-                className="relative w-2/5 aspect-[4/5] rounded-2xl shadow-xl drop-shadow-md"
-              >
+            <div className="flex flex-row-reverse gap-10">
+              <div data-aos="fade-up-right" data-aos-offset="-200" className="w-2/5 aspect-[4/5]">
                 <Image
-                  src="http://localhost:8080/api/static/img?fileName=1X-88Igro2IThxnMUoJEh50SFlRtnLBCH"
+                  src="https://shorelab-backend.vercel.app/api/static/img?fileName=1X-88Igro2IThxnMUoJEh50SFlRtnLBCH"
                   alt=""
-                  fill
-                  className="object-cover rounded-2xl"
-                  sizes="50vw"
+                  sizes="30vw"
+                  classNames={{
+                    wrapper: "w-full h-full flex overflow-hidden items-center",
+                    img: "w-full object-none h-full rounded-none"
+                  }}
                 />
-                // https://www.ipb.ac.id/wp-content/uploads/2024/07/Sea-Farming-IPB-University-Bersama-Dinas-Ketahanan-Pangan-Kelautan-dan-Pertanian-DKI-Jakarta-Mengawal-Pembangunan-Budaya-Maritim.png
+              {/* https://www.ipb.ac.id/wp-content/uploads/2024/07/Sea-Farming-IPB-University-Bersama-Dinas-Ketahanan-Pangan-Kelautan-dan-Pertanian-DKI-Jakarta-Mengawal-Pembangunan-Budaya-Maritim.png */}
               </div>
               <div className="w-2/5">
                 <div about="section-heading" className="mb-12">
@@ -210,7 +191,7 @@ const AboutPage = () => {
             </div>
 
             <div className="flex flex-row gap-10">
-              // https://i.pinimg.com/originals/51/35/99/513599a7b70bbcc1ddb68765e534cd1e.jpg
+              {/* https://i.pinimg.com/originals/51/35/99/513599a7b70bbcc1ddb68765e534cd1e.jpg */}
               <div
                 data-aos="fade-up-right"
                 data-aos-offset="-800"
@@ -251,7 +232,7 @@ const AboutPage = () => {
                   ocean.
                 </p>
               </div>
-            </div> */}
+            </div>
           </AboutWrapper>
         </div>
         <div className="-bottom-1 relative">

@@ -4,15 +4,14 @@ import { useEffect } from 'react'
 
 const AboutWrapper = ({children}) => {
   useEffect(() => {
-  window.addEventListener("scroll", (e) => {
-    const aboutSection = document.getElementById("about");
-    const title = document.getElementById("title");
-    const axY = window.scrollY;
-    if (aboutSection) {
-      aboutSection.style.transform =
-        "translateY(" + (-80 + 0.6 * -axY) + "px)"
-    }
-  });
+    window.addEventListener("scroll", (e) => {
+      const aboutSection = document.getElementById("about");
+      const axY = window.scrollY;
+      if (aboutSection) {
+        aboutSection.style.transform =
+          "translateY(" + (-80 + 0.6 * -axY) + "px)"
+      }
+    });
   }, []);
   return(
     <div

@@ -11,8 +11,6 @@ export function Providers({ children }) {
   useEffect(() => {
     Aos.init({
       disable: "mobile",
-      duration: 700,
-      easing: "ease-out-cubic",
     })
   })
 
