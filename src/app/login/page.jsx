@@ -2,18 +2,23 @@
 
 import React from "react";
 import LoginForm from "./section/form";
+import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import { Image } from "@nextui-org/react";
+import "@splidejs/react-splide/css";
+import SectionHeading from "@/templates/heading";
 
 const LoginPage = () => {
   return (
-    <div className="flex items-center justify-center bg-gradient-to-b from-teal-secondary to-primary-dark ">
-      <div className="flex justify-center items-center">
-        <div className="flex w-2/5 min-h-screen items-center justify-center font-extrabold text-4xl bg-red-500">
-          Allan, please add pictures
-        </div>
-        <div className="w-3/5 h-full flex items-center justify-center ">
-          <LoginForm />
-        </div>
+    <div className="flex min-h-screen max-h-screen items-center justify-center bg-gradient-to-l from-teal-secondary to-primary-dark ">
+      <div className="w-2/5 h-screen flex justify-center items-center bg-primary-dark/65">
+        <Image
+          src="assets/topography.webp"
+          alt="Background"
+          className="object-cover w-full h-screen"
+        ></Image>
+      </div>
+      <div className="w-3/5 h-full max-h-screen flex items-center justify-center">
+        <LoginForm />
       </div>
     </div>
   );
