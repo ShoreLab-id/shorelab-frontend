@@ -5,8 +5,6 @@ import { EyeSlashFilledIcon } from "@/templates/EyeSlashFilledIcon";
 import { ButtonPrimary, ButtonSecondary } from "@/templates/buttons";
 import SectionHeading from "@/templates/heading";
 import { FaGoogle } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 
 const LoginForm = () => {
   const [formData, setFormData] = useState({
@@ -31,18 +29,9 @@ const LoginForm = () => {
   return (
     <div className="flex justify-center items-center w-screen">
       <div></div>
-      <div className="py-8 px-6 shadow rounded-lg sm:px-10 bg-absolute-white">
+      <div className="py-8 px-6 w-3/5 shadow rounded-lg sm:px-10 bg-absolute-white">
         <div className="text-center">
           <SectionHeading sub={"WELCOME BACK!"} title={"Sign In"} />
-          <p className="mt-2 text-sm text-gray-600">
-            Don&apos;t have an account?{" "}
-            <a
-              href="/register"
-              className="font-medium text-primary-dark hover:text-teal-secondary"
-            >
-              Sign up
-            </a>
-          </p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
           <div className="space-y-4">
@@ -102,7 +91,7 @@ const LoginForm = () => {
             </div>
             <div>
               <a
-                href="/forgot-password"
+                href="/forgotpass"
                 className="font-medium text-primary-dark hover:text-teal-secondary"
               >
                 Forgot your password?
@@ -117,30 +106,27 @@ const LoginForm = () => {
           </div>
 
           <div className="text-center mt-6">
-            <p className="text-sm font-medium text-gray-600">or Login With</p>
-            <div className="flex justify-center space-x-4 mt-4">
+            <div className="flex justify-center mt-4">
               <ButtonSecondary
                 width="full"
                 size="lg"
                 onClick={() => console.log("Google login")}
               >
-                <FaGoogle className="text-4xl" />
-              </ButtonSecondary>
-              <ButtonSecondary
-                width="full"
-                size="lg"
-                onClick={() => console.log("Facebook login")}
-              >
-                <FaFacebook className="text-4xl"></FaFacebook>
-              </ButtonSecondary>
-              <ButtonSecondary
-                width="full"
-                size="lg"
-                onClick={() => console.log("GitHub login")}
-              >
-                <FaGithub className="text-4xl"></FaGithub>
+                <div className="flex items-center justify-center gap-4 w-full">
+                  <FaGoogle className="text-4xl" />
+                  <span>Login with Google</span>
+                </div>
               </ButtonSecondary>
             </div>
+            <p className="mt-2 text-md text-gray-600">
+              Don&apos;t have an account?{" "}
+              <a
+                href="/register"
+                className="font-medium text-primary-dark hover:text-teal-secondary"
+              >
+                Sign up
+              </a>
+            </p>
           </div>
 
           <div className="text-center mt-6">
