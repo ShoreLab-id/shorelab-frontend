@@ -10,20 +10,21 @@ import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 import "@splidejs/react-splide/css";
 
 const AboutPage = () => {
-  useEffect (() => {
-      window.addEventListener("scroll", (e) => {
-      const aboutSection = document.getElementById("about")
+  useEffect(() => {
+    window.addEventListener("scroll", (e) => {
+      const aboutSection = document.getElementById("about");
       const title = document.getElementById("title");
-      const axY = window.scrollY
+      const axY = window.scrollY;
       if (aboutSection) {
-        aboutSection.style.transform = 'translateY(' + (-80 + (0.6 * -axY)) + 'px)';
-        title.style.transform = 'translateY(' + (0.75 * axY) + 'px)';
-        title.style.scale = (100 - (0.05 * axY))/100;
-        title.style.opacity = (100 - (0.5 * axY))/100;
-        title.style.filter = 'blur('+ 0.1 * axY + 'px)'
+        aboutSection.style.transform =
+          "translateY(" + (-80 + 0.6 * -axY) + "px)";
+        title.style.transform = "translateY(" + 0.75 * axY + "px)";
+        title.style.scale = (100 - 0.05 * axY) / 100;
+        title.style.opacity = (100 - 0.5 * axY) / 100;
+        title.style.filter = "blur(" + 0.1 * axY + "px)";
       }
-    })
-  }, [])
+    });
+  }, []);
 
   return (
     <div>
@@ -44,7 +45,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="relative w-full h-min bg-[#03202C] bg-[url('/assets/topography.svg')]">
+      <section className="relative w-full h-min bg-[#03202C] bg-[url('/assets/topography.webp')]">
         <div className="relative flex justify-center w-full h-fit max-h-[1600px]">
           <div
             data-aos="fade-up"
