@@ -2,69 +2,57 @@
 
 import Image from "next/image";
 import { poppins, oxygen } from "@/templates/font";
-import { useEffect } from "react";
 import SectionHeading from "@/templates/heading";
-import React from "react";
-import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
+// import { Splide, SplideSlide, SplideTrack } from "@splidejs/react-splide";
 
 import "@splidejs/react-splide/css";
+import TitleSection from "./sections/title";
+import AboutWrapper from "./AboutWrapper";
 
 const AboutPage = () => {
-  useEffect(() => {
-    window.addEventListener("scroll", (e) => {
-      const aboutSection = document.getElementById("about");
-      const title = document.getElementById("title");
-      const axY = window.scrollY;
-      if (aboutSection) {
-        aboutSection.style.transform =
-          "translateY(" + (-80 + 0.6 * -axY) + "px)";
-        title.style.transform = "translateY(" + 0.75 * axY + "px)";
-        title.style.scale = (100 - 0.05 * axY) / 100;
-        title.style.opacity = (100 - 0.5 * axY) / 100;
-        title.style.filter = "blur(" + 0.1 * axY + "px)";
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", (e) => {
+  //     const aboutSection = document.getElementById("about");
+  //     const title = document.getElementById("title");
+  //     const axY = window.scrollY;
+  //     if (aboutSection) {
+  //       aboutSection.style.transform =
+  //         "translateY(" + (-80 + 0.6 * -axY) + "px)";
+  //       title.style.transform = "translateY(" + 0.75 * axY + "px)";
+  //       title.style.scale = (100 - 0.05 * axY) / 100;
+  //       title.style.opacity = (100 - 0.5 * axY) / 100;
+  //       title.style.filter = "blur(" + 0.1 * axY + "px)";
+  //     }
+  //   });
+  // }, []);
 
   return (
     <div>
       <section className="relative w-full h-screen bg-cover bg-center bg-[url('/static/home-hero.jpg')] z-0">
         <div className="w-full h-full bg-[#03202C]/65 flex justify-center">
           <div className="w-[80%] max-w-[1300px] flex flex-col justify-center items-center gap-20">
-            <div
-              data-aos="fade-up"
-              id="title"
-              className="flex gap-10 items-center justify-center"
-            >
-              <div className="size-32 bg-slate-200 animate-pulse rounded-lg" />
-              <h1 className={oxygen + "text-9xl font-bold text-white"}>
-                ShoreLab
-              </h1>
-            </div>
+            <TitleSection />
           </div>
         </div>
       </section>
 
       <section className="relative w-full h-min bg-[#03202C] bg-[url('/assets/topography.webp')]">
         <div className="relative flex justify-center w-full h-fit max-h-[1600px]">
-          <div
-            data-aos="fade-up"
-            data-aos-offset="-500"
-            id="about"
-            className="bg-primary-dark w-[80%] max-w-[1300px] text-white z-[1] rounded-2xl drop-shadow-md shadow-xl -translate-y-20 p-20 flex flex-col gap-32 h-fit"
-          >
+          <AboutWrapper>
             <div className="flex flex-row gap-10">
               <div
                 data-aos="fade-up-right"
-                className="relative w-3/5 aspect-[5/4] rounded-2xl shadow-xl drop-shadow-md"
+                className="relative w-3/5 aspect-[5/4] rounded-2xl shadow-xl drop-shadow-md overflow-hidden"
               >
-                <Image
-                  src="/static/about_1.jpg"
-                  alt=""
-                  fill
-                  className="object-cover rounded-2xl"
-                  sizes="50vw"
-                />
+                  <Image
+                    onLoad={() => <div className="w-full h-full bg-slate-200 animate-pulse" />}
+                    src="https://shorelab-backend.vercel.app/api/static/img?fileName=1X-88Igro2IThxnMUoJEh50SFlRtnLBCH"
+                    alt=""
+                    loading="lazy"
+                    fill
+                    sizes="50vw"
+                    className="object-cover"
+                  />
               </div>
               <div className="w-2/5">
                 <div about="section-heading" className="mb-12">
@@ -94,20 +82,20 @@ const AboutPage = () => {
               </div>
             </div>
 
-            <div className="flex flex-row-reverse gap-10">
+            {/* <div className="flex flex-row-reverse gap-10">
               <div
                 data-aos="fade-up-left"
                 data-aos-offset="-200"
                 className="relative w-2/5 aspect-[4/5] rounded-2xl shadow-xl drop-shadow-md"
               >
                 <Image
-                  src="/static/about_2.png"
+                  src="http://localhost:8080/api/static/img?fileName=1X-88Igro2IThxnMUoJEh50SFlRtnLBCH"
                   alt=""
                   fill
                   className="object-cover rounded-2xl"
                   sizes="50vw"
                 />
-                {/* https://www.ipb.ac.id/wp-content/uploads/2024/07/Sea-Farming-IPB-University-Bersama-Dinas-Ketahanan-Pangan-Kelautan-dan-Pertanian-DKI-Jakarta-Mengawal-Pembangunan-Budaya-Maritim.png */}
+                // https://www.ipb.ac.id/wp-content/uploads/2024/07/Sea-Farming-IPB-University-Bersama-Dinas-Ketahanan-Pangan-Kelautan-dan-Pertanian-DKI-Jakarta-Mengawal-Pembangunan-Budaya-Maritim.png
               </div>
               <div className="w-2/5">
                 <div about="section-heading" className="mb-12">
@@ -222,7 +210,7 @@ const AboutPage = () => {
             </div>
 
             <div className="flex flex-row gap-10">
-              {/* https://i.pinimg.com/originals/51/35/99/513599a7b70bbcc1ddb68765e534cd1e.jpg */}
+              // https://i.pinimg.com/originals/51/35/99/513599a7b70bbcc1ddb68765e534cd1e.jpg
               <div
                 data-aos="fade-up-right"
                 data-aos-offset="-800"
@@ -263,8 +251,8 @@ const AboutPage = () => {
                   ocean.
                 </p>
               </div>
-            </div>
-          </div>
+            </div> */}
+          </AboutWrapper>
         </div>
         <div className="-bottom-1 relative">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -277,7 +265,7 @@ const AboutPage = () => {
         </div>
       </section>
 
-      <section className="relative w-full py-20">
+      {/* <section className="relative w-full py-20">
         <div
           data-aos="fade-up"
           className="relative z-10 max-w-[1300px] mx-auto px-6 text-center"
@@ -335,7 +323,7 @@ const AboutPage = () => {
             </div>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <section className="flex flex-col justify-center items-center py-10 gap-6">
         <div className="text-center">
@@ -345,7 +333,7 @@ const AboutPage = () => {
           ></SectionHeading>
         </div>
         <div className="w-[1300px] justify-center">
-          <Splide
+          {/* <Splide
             hasTrack={false}
             options={{
               type: "loop",
@@ -385,7 +373,7 @@ const AboutPage = () => {
                 <div className="w-[310px] h-[288px] bg-blue-800"></div>
               </SplideSlide>
             </SplideTrack>
-          </Splide>
+          </Splide> */}
         </div>
       </section>
     </div>
