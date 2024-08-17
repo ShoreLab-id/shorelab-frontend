@@ -5,79 +5,26 @@ import {
   NavbarContent,
   NavbarItem,
   NavbarBrand,
+  Dropdown,
+  DropdownTrigger,
+  DropdownMenu,
+  DropdownItem
 } from "@nextui-org/react";
 import { oxygen } from "./font";
 import Link from "next/link";
 import { ButtonPrimary } from "./buttons";
 import { usePathname } from "next/navigation";
-import { useEffect } from "react"
+import { FiChevronDown } from "react-icons/fi";
+import { useEffect, useState } from "react"
 
-const deleteClass = (className, attr) => {
-  return className.replace(attr, "");
-};
-
-const handleScrollChange = (position) => {
-  const _navbar = document.getElementById("navbar");
-  const _loginButton = document.getElementById("login-button");
-  // const imageWrapper = document.querySelector(".__navbar-logo-image__")
-  const navbarText = document.querySelectorAll(".__navbar-text__");
-  if (position > 200) {
-    navbarText.forEach((item) => {
-      if (item.className.includes(" !text-primary-dark")) {
-        return;
-      }
-      item.className = deleteClass(
-        item.className,
-        " text-primary-dark lg:text-white hover:bg-slate-200/20"
-      );
-      item.className += " !text-primary-dark";
-    });
-    if (_navbar.className.includes(" lg:!bg-white")) {
-      return;
-    }
-    // imageWrapper.className = deleteClass(imageWrapper.className, " lg:w-16 lg:h-16")
-    _navbar.className = deleteClass(_navbar.className, " lg:!bg-transparent");
-    _loginButton.className = deleteClass(
-      _loginButton.className,
-      " text-white outline-white"
-    );
-    _navbar.className += " lg:!bg-white lg:!py-0";
-    _loginButton.className += " text-teal-secondary outline-teal-secondary";
-    // imageWrapper.className += " lg:w-10 lg:h-10"
-    return;
-  } else {
-    navbarText.forEach((item) => {
-      if (item.className.includes(" !text-primary-dark")) {
-        item.className = deleteClass(item.className, " !text-primary-dark");
-        item.className += " text-primary-dark lg:text-white";
-      }
-    });
-    if (_navbar.className.includes(" lg:!bg-white")) {
-      _navbar.className = deleteClass(
-        _navbar.className,
-        " lg:!bg-white lg:!py-0"
-      );
-      _navbar.className += " lg:!bg-transparent";
-      // imageWrapper.className = deleteClass(imageWrapper.className, " lg:w-10 lg:h-10")
-      // imageWrapper.className += " lg:w-16 lg:h-16"
-    }
-    if (_loginButton.className.includes(" text-teal-secondary")) {
-      _loginButton.className = deleteClass(
-        _loginButton.className,
-        " text-teal-secondary outline-teal-secondary"
-      );
-      _loginButton.className += " text-white outline-white";
-    }
-  }
-};
-
-const LoginButton = ({ children }) => {
+const LoginButton = ({ onScroll, children }) => {
   return (
     <button
       id="login-button"
       className={
+        (onScroll > 200 ? "lg:text-teal-secondary lg:outline-teal-secondary " : "lg:text-white lg:outline-white ") +
         oxygen +
-        "outline py-3 px-6 hover:outline-teal-secondary rounded-md bg-transparent hover:bg-teal-secondary active:bg-[#1F8383] transition-colors hover:text-white text-white outline-white"
+        "py-3 px-6 outline outline-teal-secondary text-teal-secondary hover:outline-teal-secondary rounded-md bg-transparent hover:bg-teal-secondary active:bg-[#1F8383] transition-colors hover:text-white"
       }
     >
       {children}
@@ -87,11 +34,41 @@ const LoginButton = ({ children }) => {
 
 const EXCEPT_RENDER = ["/login", "/register"];
 
+const DropdownComponent = ({ title, onScroll, onOpenChange, isOpen, children }) => {
+  return (
+    <Dropdown radius="sm" onOpenChange={(isOpen) => onOpenChange(isOpen)} placement="bottom-end">
+          <DropdownTrigger >
+            <div
+              className={
+                (onScroll > 200 ? "lg:text-primary-dark " : "lg:text-white ") +
+                oxygen +
+                "cursor-pointer flex items-end gap-2 transition-all hover:bg-teal-secondary/20 hover:!text-teal-secondary rounded-md px-3 py-1 text-[21px]"
+              }
+            >
+              <p>{title}</p>
+              <FiChevronDown
+                size={20}
+                className={"transition-transform " + (isOpen ? "rotate-180" : "")}
+              />
+            </div>
+          </DropdownTrigger>
+          <DropdownMenu variant="flat">
+            {children}
+          </DropdownMenu>
+        </Dropdown>
+  )
+}
+
 const MyNavbar = () => {
-  
+
+  const [isInitiativeOpen, setIsInitiativeOpen] = useState(false);
+  const [isCommunityOpen, setIsCommunityOpen] = useState(false);
+  const [isInformationOpen, setIsInformationOpen] = useState(false);
+  const [scrollPos, setScrollPos] = useState(window.scrollY);
+
   useEffect (() => {
-    window.addEventListener("scroll", (ev) => {
-      handleScrollChange(window.scrollY)
+    window.addEventListener("scroll", () => {
+      setScrollPos(window.scrollY);
     })
   }, [])
 
@@ -104,20 +81,19 @@ const MyNavbar = () => {
 
   return (
     <Navbar
-      id="navbar"
-      // disableScrollHandler={false}
+      // id="navbar"
       isBlurred={false}
-      // onScrollPositionChange={(yPos) => handleScrollChange(yPos)}
       classNames={{
-        base: "fixed py-4 bg-white lg:!bg-transparent border-b border-slate-200/50 transition-all shadow-lg drop-shadow-sm",
+        base: (scrollPos > 200 ? "lg:py-0 lg:bg-white " : "lg:py-4 lg:bg-transparent ") + "bg-white fixed py-4 border-b border-slate-200/50 transition-all shadow-lg drop-shadow-sm",
         wrapper: "max-w-[1300px]",
       }}
     >
       <NavbarBrand>
         <p
           className={
+            (scrollPos > 200 ? "lg:text-primary-dark ":"lg:text-white " ) +
             oxygen +
-            " __navbar-text__ text-[32px] font-bold transition-colors text-primary-dark lg:text-white"
+            " __navbar-text__ text-[32px] font-bold transition-colors text-primary-dark"
           }
         >
           ShoreLab
@@ -128,8 +104,9 @@ const MyNavbar = () => {
           <Link
             href="/"
             className={
+              (scrollPos > 200 ? "lg:text-primary-dark ":"lg:text-white " ) +
               oxygen +
-              "__navbar-text__ transition-colors text-primary-dark lg:text-white hover:bg-teal-secondary/20 hover:!text-teal-secondary rounded-md px-3 py-1 text-[21px]"
+              "transition-colors text-primary-dark hover:bg-teal-secondary/20 hover:!text-teal-secondary rounded-md px-3 py-1 text-[21px]"
             }
           >
             Home
@@ -139,49 +116,89 @@ const MyNavbar = () => {
           <Link
             href="/about"
             className={
+              (scrollPos > 200 ? "lg:text-primary-dark ":"lg:text-white " ) +
               oxygen +
-              "__navbar-text__ transition-colors text-primary-dark lg:text-white hover:bg-teal-secondary/20 hover:!text-teal-secondary rounded-md px-3 py-1 text-[21px]"
+              "transition-colors text-primary-dark hover:bg-teal-secondary/20 hover:!text-teal-secondary rounded-md px-3 py-1 text-[21px]"
             }
           >
             About Us
           </Link>
         </NavbarItem>
         <NavbarItem>
-          <Link
-            href="#"
-            className={
-              oxygen +
-              "__navbar-text__ transition-colors text-primary-dark lg:text-white hover:bg-teal-secondary/20 hover:!text-teal-secondary rounded-md px-3 py-1 text-[21px]"
-            }
-          >
-            Initiatives
-          </Link>
+        <Dropdown radius="sm" onOpenChange={(isOpen) => setIsInitiativeOpen(isOpen)} placement="bottom-end">
+          <DropdownTrigger >
+            <div
+              className={
+                (scrollPos > 200 ? "lg:text-primary-dark " : "lg:text-white ") +
+                oxygen +
+                "cursor-pointer flex items-end gap-2 transition-all text-primary-dark hover:bg-teal-secondary/20 hover:!text-teal-secondary rounded-md px-3 py-1 text-[21px]"
+              }
+            >
+              <p>Initiatives</p>
+              <FiChevronDown
+                size={20}
+                className={"transition-transform " + (isInitiativeOpen ? "rotate-180" : "")}
+              />
+            </div>
+          </DropdownTrigger>
+          <DropdownMenu variant="flat">
+            <DropdownItem
+              key="shorelab-academy"
+              href="/initiatives/shorelab-academy"
+              className={oxygen + "text-teal-secondary data-[hover]:bg-teal-secondary/25 data-[hover]:text-teal-secondary data-[focus-visible=true]:outline-teal-secondary"}
+              ><span className="text-lg">ShoreLab Academy</span></DropdownItem>
+            <DropdownItem
+              key="projects"
+              href="#"
+              className={oxygen + "text-primary-dark data-[hover]:bg-teal-secondary/25 data-[hover]:text-teal-secondary data-[focus-visible=true]:outline-teal-secondary"}
+            ><span className="text-lg">Other Projects</span></DropdownItem>
+          </DropdownMenu>
+        </Dropdown>
         </NavbarItem>
         <NavbarItem>
-          <Link
-            href="#"
-            className={
-              oxygen +
-              "__navbar-text__ transition-colors text-primary-dark lg:text-white hover:bg-teal-secondary/20 hover:!text-teal-secondary rounded-md px-3 py-1 text-[21px]"
-            }
-          >
-            Community
-          </Link>
+          <DropdownComponent
+            onScroll={scrollPos}
+            title="Community"
+            isOpen={isCommunityOpen}
+            onOpenChange={setIsCommunityOpen}>
+              <DropdownItem
+              key="shoresnap"
+              href="#"
+              className={oxygen + "text-primary-dark data-[hover]:bg-teal-secondary/25 data-[hover]:text-teal-secondary data-[focus-visible=true]:outline-teal-secondary"}
+            ><span className="text-lg">ShoreSnap</span></DropdownItem>
+              <DropdownItem
+              key="shorelab-insight"
+              href="#"
+              className={oxygen + "text-primary-dark data-[hover]:bg-teal-secondary/25 data-[hover]:text-teal-secondary data-[focus-visible=true]:outline-teal-secondary"}
+            ><span className="text-lg">ShoreLab Insight</span></DropdownItem>
+          </DropdownComponent>
         </NavbarItem>
         <NavbarItem>
-          <Link
-            href="#"
-            className={
-              oxygen +
-              "__navbar-text__ transition-colors text-primary-dark lg:text-white hover:bg-teal-secondary/20 hover:!text-teal-secondary rounded-md px-3 py-1 text-[21px]"
-            }
-          >
-            Information
-          </Link>
+          <DropdownComponent
+            onScroll={scrollPos}
+            title="Information"
+            isOpen={isInformationOpen}
+            onOpenChange={setIsInformationOpen}>
+              <DropdownItem
+              key="contact"
+              href="#"
+              className={oxygen + "text-primary-dark data-[hover]:bg-teal-secondary/25 data-[hover]:text-teal-secondary data-[focus-visible=true]:outline-teal-secondary"}
+            ><span className="text-lg">Contact</span></DropdownItem>
+              <DropdownItem
+              key="partnership"
+              href="#"
+              className={oxygen + "text-primary-dark data-[hover]:bg-teal-secondary/25 data-[hover]:text-teal-secondary data-[focus-visible=true]:outline-teal-secondary"}
+            ><span className="text-lg">Partnership</span></DropdownItem>
+              <DropdownItem
+              key="career"
+              href="#"
+              className={oxygen + "text-primary-dark data-[hover]:bg-teal-secondary/25 data-[hover]:text-teal-secondary data-[focus-visible=true]:outline-teal-secondary"}
+            ><span className="text-lg">Career</span></DropdownItem>
+          </DropdownComponent>
         </NavbarItem>
         <NavbarItem>
           <Link href="/login">
-            <LoginButton size="sm">Login</LoginButton>
+            <LoginButton onScroll={scrollPos} size="sm">Login</LoginButton>
           </Link>
         </NavbarItem>
         <NavbarItem>
