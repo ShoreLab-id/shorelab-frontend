@@ -64,7 +64,13 @@ const MyNavbar = () => {
   const [isInitiativeOpen, setIsInitiativeOpen] = useState(false);
   const [isCommunityOpen, setIsCommunityOpen] = useState(false);
   const [isInformationOpen, setIsInformationOpen] = useState(false);
-  const [scrollPos, setScrollPos] = useState(window.scrollY);
+
+  let currScrollPos = 0
+  if (typeof window !== 'undefined'){
+    currScrollPos = window.scrollY
+  }
+  const [scrollPos, setScrollPos] = useState(currScrollPos);
+
 
   useEffect (() => {
     window.addEventListener("scroll", () => {
