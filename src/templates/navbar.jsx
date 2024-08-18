@@ -152,7 +152,7 @@ const MyNavbar = () => {
               ><span className="text-lg">ShoreLab Academy</span></DropdownItem>
             <DropdownItem
               key="projects"
-              href="/initiatives/shorelab-academy"
+              href="/initiatives/projects"
               className={oxygen + "text-primary-dark data-[hover]:bg-teal-secondary/25 data-[hover]:text-teal-secondary data-[focus-visible=true]:outline-teal-secondary"}
             ><span className="text-lg">Other Projects</span></DropdownItem>
           </DropdownMenu>

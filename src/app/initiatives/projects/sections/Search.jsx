@@ -57,7 +57,7 @@ const CardComponent = ({project}) => {
 }
 
 const SearchSection = async () => {
-  const res = await (await fetch('http://localhost:8080/api/projects')).json()
+  const res = await (await fetch(`${process.env.BACKEND_HOSTNAME}/api/projects`)).json()
 
   return (
     <>

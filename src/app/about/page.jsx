@@ -29,7 +29,7 @@ const AboutPage = () => {
               <div data-aos="fade-up-right" className="bg-slate-200/20 relative w-3/5 aspect-[5/4] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
                   loading="lazy"
-                  src="https://shorelab-backend.vercel.app/api/static/img?fileName=14RMPqLrBsZR6PxkSMJbVR_qyXxYZWW3G"
+                  src={`${process.env.BACKEND_HOSTNAME}/api/static/img?fileName=14RMPqLrBsZR6PxkSMJbVR_qyXxYZWW3G`}
                   alt=""
                   fill
                   className="object-cover"
@@ -67,7 +67,7 @@ const AboutPage = () => {
               <div data-aos="fade-up-left" data-aos-offset="-200" className="bg-slate-200/20 relative w-2/5 aspect-[4/5] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
                   loading="lazy"
-                  src="https://shorelab-backend.vercel.app/api/static/img?fileName=1X-88Igro2IThxnMUoJEh50SFlRtnLBCH"
+                  src={`${process.env.BACKEND_HOSTNAME}/api/static/img?fileName=1X-88Igro2IThxnMUoJEh50SFlRtnLBCH`}
                   alt=""
                   fill
                   className="object-cover"
@@ -106,7 +106,7 @@ const AboutPage = () => {
               <div data-aos="fade-up-right" data-aos-offset="-400" className="bg-slate-200/20 relative w-2/5 aspect-square rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
                   loading="lazy"
-                  src="https://shorelab-backend.vercel.app/api/static/img?fileName=1-lPJpbTrPlJ-EotKudxuCwigN05bKQ49"
+                  src={`${process.env.BACKEND_HOSTNAME}/api/static/img?fileName=1-lPJpbTrPlJ-EotKudxuCwigN05bKQ49`}
                   alt=""
                   fill
                   className="object-cover"
@@ -147,7 +147,7 @@ const AboutPage = () => {
                 className="bg-slate-200/20 relative w-3/5 aspect-[5/4] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
                   loading="lazy"
-                  src="https://shorelab-backend.vercel.app/api/static/img?fileName=1gyhsICJa-U-GmjEGfxucZBCS4g9Qr63p"
+                  src={`${process.env.BACKEND_HOSTNAME}/api/static/img?fileName=1gyhsICJa-U-GmjEGfxucZBCS4g9Qr63p`}
                   alt=""
                   fill
                   className="object-cover"
@@ -188,7 +188,7 @@ const AboutPage = () => {
                 className="bg-slate-200/20 relative w-2/5 aspect-[5/4] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
                   loading="lazy"
-                  src="https://shorelab-backend.vercel.app/api/static/img?fileName=1gRDDfgEQHlmsN-7ZK0M3Q-2AmQgJpQ9o"
+                  src={`${process.env.BACKEND_HOSTNAME}/api/static/img?fileName=1gRDDfgEQHlmsN-7ZK0M3Q-2AmQgJpQ9o`}
                   alt=""
                   fill
                   className="object-cover"
