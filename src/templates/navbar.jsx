@@ -65,12 +65,7 @@ const MyNavbar = () => {
   const [isCommunityOpen, setIsCommunityOpen] = useState(false);
   const [isInformationOpen, setIsInformationOpen] = useState(false);
 
-  let currScrollPos = 0
-  if (typeof window !== 'undefined'){
-    currScrollPos = window.scrollY
-  }
-  const [scrollPos, setScrollPos] = useState(currScrollPos);
-
+  const [scrollPos, setScrollPos] = useState(window.scrollY);
 
   useEffect (() => {
     window.addEventListener("scroll", () => {
@@ -157,7 +152,7 @@ const MyNavbar = () => {
               ><span className="text-lg">ShoreLab Academy</span></DropdownItem>
             <DropdownItem
               key="projects"
-              href="#"
+              href="/initiatives/shorelab-academy"
               className={oxygen + "text-primary-dark data-[hover]:bg-teal-secondary/25 data-[hover]:text-teal-secondary data-[focus-visible=true]:outline-teal-secondary"}
             ><span className="text-lg">Other Projects</span></DropdownItem>
           </DropdownMenu>
