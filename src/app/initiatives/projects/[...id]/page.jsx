@@ -8,7 +8,7 @@ const ProjectDetail = async (id) => {
   let date
   let price
   try{
-    const res = await fetch(`http://localhost:8080/api/projects?projectID=${params.id[0]}`)
+    const res = await fetch(`${process.env.BACKEND_HOSTNAME}/api/projects?projectID=${params.id[0]}`)
     const resJson = await res.json()
     if (resJson) {
       projectData = resJson.data
