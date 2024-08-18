@@ -8,7 +8,13 @@ const nextConfig = {
         hostname: 'shorelab-backend.vercel.app',
         port: '',
         pathname: '/api/static/**'
-      }
+      },
+      {
+        protocol: 'http',
+        hostname: 'localhost',
+        port: '8080',
+        pathname: '/api/static/**'
+      },
     ]
   }
 };
