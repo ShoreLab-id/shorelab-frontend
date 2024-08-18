@@ -31,7 +31,7 @@ const HeaderSection = () => {
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d902872.4303051748!2d117.92678211944552!3d1.9796336607511547!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x320db9032df93133%3A0x2cea5b974756a685!2sKabupaten%20Berau%2C%20Kalimantan%20Timur!5e0!3m2!1sid!2sid!4v1723833757343!5m2!1sid!2sid"
                 className="size-[30rem]"
                 loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
+                referrerPolicy="no-referrer-when-downgrade"
               />
             </div>
           </div>
