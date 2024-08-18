@@ -5,6 +5,33 @@ import { ButtonPrimary } from "@/templates/buttons";
 import { oxygen } from "@/templates/font";
 import Link from "next/link";
 
+const StatusComponent = ({status}) => {
+  let textColor
+  let statusText
+  switch (status) {
+    case 0:
+      textColor = "text-emerald-500"
+      statusText = "On Going"
+      break
+    case 1:
+      textColor = "text-amber-600"
+      statusText = "Coming Soon"
+      break
+    case 2:
+      textColor = "text-slate-500"
+      statusText = "Ended"
+      break
+    default:
+      textColor = "text-primary-dark"
+      statusText = ""
+  }
+  return (
+    <div className={oxygen + "w-full px-4 py-2 text-primary-dark"}>
+      status: <span className={textColor}>{statusText}</span>
+    </div>
+  )
+}
+
 const CardComponent = ({project}) => {
   return (
     <div className="bg-white drop-shadow-sm shadow-lg w-full aspect-[4/6] rounded-lg overflow-hidden flex flex-col justify-between">
@@ -24,14 +51,14 @@ const CardComponent = ({project}) => {
                 </p>
               </div>
             </div>
-            <div className={oxygen + "w-full px-4 py-2 text-primary-dark"}>
-              status: <span className="text-emerald-500">{project.status}</span>
-            </div>
+            <StatusComponent status={project.status} />
           </div>
   )
 }
 
-const SearchSection = () => {
+const SearchSection = async () => {
+  const res = await (await fetch('http://localhost:8080/api/projects')).json()
+
   return (
     <>
       <div className="w-full bg-[#F3F9FC] flex flex-col items-center py-4">
@@ -50,34 +77,17 @@ const SearchSection = () => {
           </form>
         </div>
         <div className="w-[80%] max-w-[1300px] grid grid-cols-3 gap-10 pt-10 pb-20">
-          <CardComponent project={{
-            link: '#',
-            title: 'Lorem Ipsum Dolor Sit Amet, Fuck You Mate',
-            type: 'Volunteer',
-            location: 'Yogyakarta',
-            status: 'On going',
-          }} />
-          <CardComponent project={{
-            link: '#',
-            title: 'Lorem Ipsum Dolor Sit Amet, Fuck You Mate',
-            type: 'Volunteer',
-            location: 'Yogyakarta',
-            status: 'On going',
-          }} />
-          <CardComponent project={{
-            link: '#',
-            title: 'Lorem Ipsum Dolor Sit Amet, Fuck You Mate',
-            type: 'Volunteer',
-            location: 'Yogyakarta',
-            status: 'On going',
-          }} />
-          <CardComponent project={{
-            link: '#',
-            title: 'Lorem Ipsum Dolor Sit Amet, Fuck You Mate',
-            type: 'Volunteer',
-            location: 'Yogyakarta',
-            status: 'On going',
-          }} />
+          {
+            res.data.map((data) => {
+              return <CardComponent key={data._id} project={{
+                link: `/initiatives/projects/${data._id}`,
+                title: data.title,
+                type: data.type,
+                location: data.location.toUpperCase(),
+                status: data.status,
+              }} />
+            })
+          }
         </div>
       </div>
     </>
