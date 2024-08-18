@@ -1,4 +1,4 @@
-import { Image } from "@nextui-org/react";
+import Image from "next/image"
 import { poppins, oxygen } from "@/templates/font";
 import SectionHeading from "@/templates/heading";
 import dynamic from "next/dynamic";
@@ -26,15 +26,13 @@ const AboutPage = () => {
         <div className="relative flex justify-center w-full h-fit max-h-[1600px]">
           <AboutWrapper>
             <div className="flex flex-row gap-10">
-              <div data-aos="fade-up-right" className="relative w-3/5 aspect-[5/4] rounded-lg overflow-hidden">
+              <div data-aos="fade-up-right" className="bg-slate-200/20 relative w-3/5 aspect-[5/4] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
+                  loading="lazy"
                   src="https://shorelab-backend.vercel.app/api/static/img?fileName=14RMPqLrBsZR6PxkSMJbVR_qyXxYZWW3G"
                   alt=""
-                  loading="lazy"
-                  classNames={{
-                    wrapper: "h-full max-h-fit object-cover overflow-hidden rounded-none bg-red-500/25",
-                    img: "min-w-full min-h-full rounded-none"
-                  }}
+                  fill
+                  className="object-cover"
                 />
               </div>
               <div className="w-2/5">
@@ -66,15 +64,13 @@ const AboutPage = () => {
             </div>
 
             <div className="flex flex-row-reverse gap-10">
-              <div data-aos="fade-up-right" data-aos-offset="-200" className="w-2/5 aspect-[4/5]">
+              <div data-aos="fade-up-left" data-aos-offset="-200" className="bg-slate-200/20 relative w-2/5 aspect-[4/5] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
+                  loading="lazy"
                   src="https://shorelab-backend.vercel.app/api/static/img?fileName=1X-88Igro2IThxnMUoJEh50SFlRtnLBCH"
                   alt=""
-                  sizes="30vw"
-                  classNames={{
-                    wrapper: "w-full h-full flex overflow-hidden items-center",
-                    img: "w-full object-none h-full rounded-none"
-                  }}
+                  fill
+                  className="object-cover"
                 />
               {/* https://www.ipb.ac.id/wp-content/uploads/2024/07/Sea-Farming-IPB-University-Bersama-Dinas-Ketahanan-Pangan-Kelautan-dan-Pertanian-DKI-Jakarta-Mengawal-Pembangunan-Budaya-Maritim.png */}
               </div>
@@ -107,17 +103,13 @@ const AboutPage = () => {
             </div>
 
             <div className="flex flex-row gap-10">
-              <div
-                data-aos="fade-up-right"
-                data-aos-offset="-400"
-                className="relative w-2/5 aspect-square rounded-2xl shadow-xl drop-shadow-md"
-              >
+              <div data-aos="fade-up-right" data-aos-offset="-400" className="bg-slate-200/20 relative w-2/5 aspect-square rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
-                  src="/static/about_3.png"
+                  loading="lazy"
+                  src="https://shorelab-backend.vercel.app/api/static/img?fileName=1-lPJpbTrPlJ-EotKudxuCwigN05bKQ49"
                   alt=""
                   fill
-                  className="object-cover rounded-2xl"
-                  sizes="50vw"
+                  className="object-cover"
                 />
               </div>
               <div className="w-2/5">
@@ -152,14 +144,13 @@ const AboutPage = () => {
               <div
                 data-aos="fade-up-left"
                 data-aos-offset="-600"
-                className="relative w-3/5 aspect-[5/4] rounded-2xl shadow-xl drop-shadow-md"
-              >
+                className="bg-slate-200/20 relative w-3/5 aspect-[5/4] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
-                  src="/static/about_4.png"
+                  loading="lazy"
+                  src="https://shorelab-backend.vercel.app/api/static/img?fileName=1gyhsICJa-U-GmjEGfxucZBCS4g9Qr63p"
                   alt=""
                   fill
-                  className="object-cover rounded-2xl"
-                  sizes="50vw"
+                  className="object-cover"
                 />
               </div>
               <div className="w-2/5">
@@ -191,20 +182,19 @@ const AboutPage = () => {
             </div>
 
             <div className="flex flex-row gap-10">
-              {/* https://i.pinimg.com/originals/51/35/99/513599a7b70bbcc1ddb68765e534cd1e.jpg */}
               <div
                 data-aos="fade-up-right"
                 data-aos-offset="-800"
-                className="relative w-2/5 aspect-[5/4] rounded-2xl shadow-xl drop-shadow-md"
-              >
+                className="bg-slate-200/20 relative w-2/5 aspect-[5/4] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
-                  src="/static/about_5.jpg"
+                  loading="lazy"
+                  src="https://shorelab-backend.vercel.app/api/static/img?fileName=1gRDDfgEQHlmsN-7ZK0M3Q-2AmQgJpQ9o"
                   alt=""
                   fill
-                  className="object-cover rounded-2xl"
-                  sizes="50vw"
+                  className="object-cover"
                 />
               </div>
+              {/* https://i.pinimg.com/originals/51/35/99/513599a7b70bbcc1ddb68765e534cd1e.jpg */}
               <div id="section5" className="w-3/5">
                 <div about="section-heading" className="mb-12">
                   <h2
