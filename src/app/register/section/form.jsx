@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import { Input } from "@nextui-org/react";
 import { EyeFilledIcon } from "@/templates/EyeFilledIcon";
 import { EyeSlashFilledIcon } from "@/templates/EyeSlashFilledIcon";
-import { ButtonPrimary } from "@/templates/buttons";
+import { ButtonPrimary, ButtonSecondary } from "@/templates/buttons";
 import SectionHeading from "@/templates/heading";
 import { oxygen } from "@/templates/font";
+import { FaGoogle } from "react-icons/fa";
 
 const Form = () => {
   const [formData, setFormData] = useState({
@@ -172,6 +173,19 @@ const Form = () => {
           <ButtonPrimary width="full" size="lg" onClick={handleSubmit}>
             Register
           </ButtonPrimary>
+        </div>
+
+        <div className="flex justify-center mt-4">
+          <ButtonSecondary
+            width="full"
+            size="lg"
+            onClick={() => console.log("Google register")}
+          >
+            <div className="flex items-center justify-center gap-4 w-full">
+              <FaGoogle className="text-4xl" />
+              <span>Register with Google</span>
+            </div>
+          </ButtonSecondary>
         </div>
 
         <div className={oxygen + "text-center mt-4"}>
