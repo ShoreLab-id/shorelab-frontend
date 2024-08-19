@@ -57,10 +57,10 @@ const Footer = () => {
 
           <div className="flex flex-col md:flex-row items-center justify-between">
             <h2 className={ oxygen + " text-secondary-white text-[69.82px] font-bold" }>ShoreLab</h2>
-            <div className="grid grid-cols-3 gap-20">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-20">
               <div>
                 <GroupHeader>EXPLORE</GroupHeader>
-                <ul className="flex flex-col gap-4">
+                <ul className="flex flex-row md:flex-col gap-4">
                   <li><LinkItem to="/">Home</LinkItem></li>
                   <li><LinkItem to="#">About Us</LinkItem></li>
                   <li><LinkItem to="#">Partners</LinkItem></li>
@@ -68,7 +68,7 @@ const Footer = () => {
               </div>
               <div>
                 <GroupHeader>COMMUNITY</GroupHeader>
-                <ul className="flex flex-col gap-4">
+                <ul className="grid grid-cols-2 md:flex md:flex-col gap-4">
                   <li><LinkItem to="/initiatives/shorelab-academy">ShoreLab Academy</LinkItem></li>
                   <li><LinkItem to="#">Initiatives</LinkItem></li>
                   <li><LinkItem to="#">ShoreSnap</LinkItem></li>
@@ -77,7 +77,7 @@ const Footer = () => {
               </div>
               <div>
                 <GroupHeader>INFORMATION</GroupHeader>
-                <ul className="flex flex-col gap-4">
+                <ul className="flex flex-row md:flex-col gap-4">
                   <li><LinkItem to="#">Contact</LinkItem></li>
                   <li><LinkItem to="#">Partnership</LinkItem></li>
                   <li><LinkItem to="#">Career</LinkItem></li>

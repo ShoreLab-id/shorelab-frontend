@@ -99,7 +99,7 @@ const MyNavbar = () => {
           icon={isMenuOpen ? <BsXLg size={30} />  : <BsList size={30} />}
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
           className="w-fit aspect-square flex lg:hidden hover:bg-slate-200/50 text-teal-secondary h-min p-2"/>
-        <NavbarBrand>
+        <NavbarBrand className="hidden sm:block">
           <Link href="/">
             <p
               className={
