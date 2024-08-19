@@ -1,9 +1,8 @@
 import { ButtonPrimary } from "@/templates/buttons";
 import { poppins, oxygen } from "@/templates/font";
 import SectionHeading from "@/templates/heading";
-// import { Image } from "@nextui-org/react";
 import Image from "next/image";
-import Link from "next/link";
+// import { Image } from "@nextui-org/react";
 
 // https://blog.remoovit.com/2022/11/02/great-weekend-environmental-volunteer-events/
 const AboutBait = () => {
@@ -12,13 +11,13 @@ const AboutBait = () => {
       <div className="w-full flex items-center justify-center">
         <div className="w-[80%] max-w-[1300px]">
           <div className="flex justify-evenly gap-8 items-center">
-            <div className="relative h-[35rem] w-[28rem] flex-shrink-0">
+            <div className="relative aspect-[4/5] w-[28rem] flex-shrink-0 rounded-xl overflow-hidden">
               <Image
-                src="/static/home-about.png"
+                src="/static/home-about.webp"
                 alt=""
                 sizes="30vw"
                 fill
-                className="object-cover rounded-xl" />
+                className="object-cover" />
             </div>
             <div className="flex flex-col max-w-[40rem]">
               <SectionHeading

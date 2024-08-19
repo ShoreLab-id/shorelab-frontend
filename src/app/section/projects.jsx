@@ -1,12 +1,9 @@
-'use client'
 
 import { oxygen } from "@/templates/font";
 import { ButtonPrimary } from "@/templates/buttons";
 import SectionHeading from "@/templates/heading";
-import Image from "next/image";
-import { Splide, SplideSlide, SplideTrack } from '@splidejs/react-splide';
+import Slider from "../components/Slider";
 
-import '@splidejs/react-splide/css';
 
 // https://i.pinimg.com/originals/76/1b/97/761b97f3f16f6b117d10616fa78a2d3d.jpg
 
@@ -25,61 +22,7 @@ const OtherInitiatives = () => {
           </div>
           <div className="z-[-1] bg-white h-full w-64 absolute -right-24 blur-2xl scale-150 rotate-3"/>
         </div>
-        <div className="relative w-full aspect-[4/3] z-[1]">
-          <Splide hasTrack={false}
-            options={
-              {
-                rewind: true,
-                autoplay: true,
-                gap:"2rem",
-                resetProgress: false,
-                rewindByDrag: true,
-                interval: 5000,
-                pauseOnHover: false,
-                arrows: false
-              }
-            }
-            tag="section"
-          >
-            <SplideTrack >
-              <SplideSlide>
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src="/static/home-initiatives_1.jpg" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src="/static/home-initiatives_2.png" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src="/static/home-initiatives_3.png" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src="/static/home-initiatives_4.png" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src="/static/home-initiatives_5.jpg" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
-                </div>
-              </SplideSlide>
-              <SplideSlide>
-                <div className="relative w-full aspect-[4/3]">
-                  <Image src="/static/home-initiatives_6.jpeg" fill alt="" sizes="50vw" className="rounded-2xl object-cover" />
-                </div>
-              </SplideSlide>
-            </SplideTrack>
-            <div className="splide__progress">
-              <div className="splide__progress__bar" style={{
-                background: "#00A8A8"
-              }}/>
-            </div>
-          </Splide>
-        </div>
+        <Slider />
       </div>
     </main>
   );
