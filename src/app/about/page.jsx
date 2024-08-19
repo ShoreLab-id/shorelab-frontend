@@ -29,9 +29,10 @@ const AboutPage = () => {
               <div data-aos="fade-up-right" className="bg-slate-200/20 relative w-3/5 aspect-[5/4] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
                   loading="lazy"
-                  src={`${process.env.BACKEND_HOSTNAME}/api/static/img?fileName=14RMPqLrBsZR6PxkSMJbVR_qyXxYZWW3G`}
+                  src="/static/about_1.webp"
                   alt=""
                   fill
+                  sizes="30vw"
                   className="object-cover"
                 />
               </div>
@@ -67,8 +68,9 @@ const AboutPage = () => {
               <div data-aos="fade-up-left" data-aos-offset="-200" className="bg-slate-200/20 relative w-2/5 aspect-[4/5] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
                   loading="lazy"
-                  src={`${process.env.BACKEND_HOSTNAME}/api/static/img?fileName=1X-88Igro2IThxnMUoJEh50SFlRtnLBCH`}
+                  src="/static/about_2.webp"
                   alt=""
+                  sizes="40vw"
                   fill
                   className="object-cover"
                 />
@@ -106,8 +108,9 @@ const AboutPage = () => {
               <div data-aos="fade-up-right" data-aos-offset="-400" className="bg-slate-200/20 relative w-2/5 aspect-square rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
                   loading="lazy"
-                  src={`${process.env.BACKEND_HOSTNAME}/api/static/img?fileName=1-lPJpbTrPlJ-EotKudxuCwigN05bKQ49`}
+                  src="/static/about_3.webp"
                   alt=""
+                  sizes="20vw"
                   fill
                   className="object-cover"
                 />
@@ -147,9 +150,10 @@ const AboutPage = () => {
                 className="bg-slate-200/20 relative w-3/5 aspect-[5/4] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
                   loading="lazy"
-                  src={`${process.env.BACKEND_HOSTNAME}/api/static/img?fileName=1gyhsICJa-U-GmjEGfxucZBCS4g9Qr63p`}
+                  src="/static/about_4.webp"
                   alt=""
                   fill
+                  sizes="40vw"
                   className="object-cover"
                 />
               </div>
@@ -188,8 +192,9 @@ const AboutPage = () => {
                 className="bg-slate-200/20 relative w-2/5 aspect-[5/4] rounded-lg overflow-hidden shadow-2xl shadow-teal-secondary/20">
                 <Image
                   loading="lazy"
-                  src={`${process.env.BACKEND_HOSTNAME}/api/static/img?fileName=1gRDDfgEQHlmsN-7ZK0M3Q-2AmQgJpQ9o`}
+                  src="/static/about_5.webp"
                   alt=""
+                  sizes="30vw"
                   fill
                   className="object-cover"
                 />
