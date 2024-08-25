@@ -16,7 +16,9 @@ const UserDashboard = () => {
       </div>
       <div className="text-center">
         <div className="text-4xl font-extrabold text-primary-dark">
-          <span className="text-teal-secondary">Ghostblade</span>
+          <span className="text-teal-secondary">
+            Petrus Aria Chevalier Rambing
+          </span>
         </div>
         <div className="text-2xl font-bold text-absolute-white">
           <span className="text-teal-secondary">Special Agent</span>
